@@ -542,6 +542,305 @@ p,
 
 
 
+/* ----- TIENDA -----*/
+
+.hero-tienda {
+  display: grid;
+  width: 100%;
+  margin-top: 120px;
+}
+.hero-tienda-imagen {
+  grid-area: 1 / 1;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+ 
+.hero-tienda-textos {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  padding: 0 8%;
+  text-align: center;
+}
+ 
+.hero-tienda-titulo {
+  margin: 0;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #F2EBD9;
+}
+ 
+.hero-tienda-destacado {
+  font-weight: 400;
+  color: #C83228;
+}
+ 
+.hero-tienda-subtitulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #F2EBD9;
+}
+ 
+/* estrellas */
+.hero-tienda-subtitulo::before,
+.hero-tienda-subtitulo::after {
+  content: "";
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  background: url("images/svg/estrella.svg") no-repeat center / contain;
+}
+ 
+/* merch */
+
+.merch {
+  margin-top: 75px; 
+  padding: 0 8%;
+}
+
+.merch-ruta {
+  margin: 0 0 30px;
+}
+
+.merch-titulo {
+  margin: 0 0 60px;
+  color: #C83228;
+}
+
+.merch-productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px 3.7%;
+}
+
+/* ficha de producto */
+.merch-producto {
+  display: flex;
+  flex-direction: column;
+}
+
+/* imagen: la segunda foto queda encima, invisible, y aparece en el hover */
+.merch-producto-imagen {
+  display: grid;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.merch-producto-foto,
+.merch-producto-foto-hover {
+  grid-area: 1 / 1;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.merch-producto-foto-hover {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.merch-producto-imagen:hover .merch-producto-foto-hover,
+.merch-producto-imagen:focus-visible .merch-producto-foto-hover {
+  opacity: 1;
+}
+
+.merch-producto-imagen:focus-visible {
+  outline: 2px solid #0F214A;
+  outline-offset: 3px;
+}
+
+/* textos */
+.merch-producto-nombre {
+  margin: 0 0 17px;
+}
+
+.merch-producto-precio {
+  margin: 0 0 17px;
+}
+
+.merch-producto-transferencia {
+  max-width: 80%;
+  margin: 0 0 30px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.merch-producto-descuento {
+  font-weight: 400;
+  color: #C83228;
+}
+
+/* botón comprar */
+.merch-producto-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  height: 42px;
+  padding: 0 33px;
+  border-radius: 999px;
+  background-color: #C83228;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.merch-producto-boton:active {
+  background-color: #A02820;
+}
+
+.merch-producto-boton:focus-visible {
+  outline: 2px solid #0F214A;
+  outline-offset: 3px;
+}
+
+/* botones*/
+.section-botones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.7%;
+  padding: 150px 8%;
+  background: linear-gradient(to bottom, #FFFFFF, #F2EBD9, #FFFFFF);
+}
+ 
+.section-botones-boton {
+  display: grid;
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+}
+ 
+.section-botones-boton:focus-visible {
+  outline: 2px solid #0F214A;
+  outline-offset: 3px;
+}
+ 
+.section-botones-imagen {
+  grid-area: 1 / 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+ 
+.section-botones-titulo {
+  grid-area: 1 / 1;
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  margin: 0;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #F2EBD9;
+  transition: letter-spacing 0.3s ease;
+}
+ 
+/* hover */
+.section-botones-boton:hover .section-botones-imagen,
+.section-botones-boton:focus-visible .section-botones-imagen {
+  transform: scale(1.1);
+}
+ 
+.section-botones-boton:hover .section-botones-titulo,
+.section-botones-boton:focus-visible .section-botones-titulo {
+  letter-spacing: 0.15em;
+}
+
+/* preguntas frecuentes */
+
+.preguntas-frecuentes {
+  padding: 0 8%;
+}
+ 
+.preguntas-frecuentes-titulo {
+  margin: 0 0 60px;
+  color: #C83228;
+  text-transform: uppercase;
+}
+ 
+.preguntas-frecuentes-contenido {
+  display: grid;
+  grid-template-columns: 62% 1fr;
+}
+ 
+.preguntas-frecuentes-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+ 
+.preguntas-frecuentes-ilustracion {
+  justify-self: end;
+  align-self: start;
+  width: 78%;
+  height: auto;
+}
+ 
+/* tarjeta */
+.preguntas-frecuentes-item {
+  border-radius: 45px;
+  background: #F2EBD9;
+}
+ 
+.preguntas-frecuentes-pregunta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 87px;
+  padding: 0 30px;
+  border-radius: 45px;
+  list-style: none;
+  cursor: pointer;
+}
+ 
+.preguntas-frecuentes-pregunta::-webkit-details-marker {
+  display: none;
+}
+ 
+.preguntas-frecuentes-pregunta:focus-visible {
+  outline: 2px solid #0F214A;
+  outline-offset: 3px;
+}
+ 
+.preguntas-frecuentes-pregunta-texto {
+  margin: 0;
+}
+ 
+/* flecha */
+.preguntas-frecuentes-pregunta::after {
+  content: "";
+  flex-shrink: 0;
+  width: 30px;
+  height: 15px;
+  background: url("images/svg/flecha-acordeon.svg") no-repeat center / contain;
+  transition: transform 0.2s ease;
+}
+ 
+.preguntas-frecuentes-item[open] .preguntas-frecuentes-pregunta::after {
+  transform: rotate(180deg);
+}
+ 
+/* respuesta */
+.preguntas-frecuentes-respuesta {
+  margin: 0;
+  padding: 0 60px 30px 30px;
+}
 
 
 
@@ -679,7 +978,19 @@ p,
     height: 40px;
   }
 
+/* MERCH */
+  .merch {
+    padding: 0 5%;
+  }
 
+  .merch-productos {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+ 
+  .merch-producto-transferencia {
+    max-width: 100%;
+  }
 
     /*----- FOOTER -----*/
   .footer {

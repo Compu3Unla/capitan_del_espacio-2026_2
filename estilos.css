@@ -850,7 +850,6 @@ p,
 
 .producto-mug {
   position: relative;
-  overflow: hidden;
   padding: 75px 8% 75px;
   margin-top: 60px;
 }
@@ -860,8 +859,8 @@ p,
   top: 150px;
   right: 0;
   width: 25%;
-  height: 879px;
-  object-fit: none;
+  height:  850px;
+  object-fit: cover;
   object-position: left top;
 }
  
@@ -1084,6 +1083,112 @@ p,
   line-height: 32px;
 }
 
+/* section también */
+.tambien {
+  padding: 0 8% 100px;
+}
+
+.tambien-titulo {
+  margin: 0 0 50px;
+  color: #C83228;
+}
+
+.tambien-productos {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*  ficha de producto */
+.tambien-producto {
+  display: flex;
+  flex-direction: column;
+  width: 16.9753%;
+}
+
+/* imagen con hover */
+.tambien-producto-imagen {
+  display: grid;
+  margin-bottom: 26px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.tambien-producto-foto,
+.tambien-producto-foto-hover {
+  grid-area: 1 / 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.tambien-producto-foto-hover {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.tambien-producto-imagen:hover .tambien-producto-foto-hover,
+.tambien-producto-imagen:focus-visible .tambien-producto-foto-hover {
+  opacity: 1;
+}
+
+.tambien-producto-imagen:focus-visible {
+  outline: 2px solid #0F214A;
+  outline-offset: 3px;
+}
+
+/* textos */
+.tambien-producto-nombre {
+  margin: 0 0 17px;
+}
+
+.tambien-producto-precio {
+  margin: 0 0 17px;
+}
+
+.tambien-producto-transferencia {
+  width: calc(100% + 15px);
+  margin: 0 0 26px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.tambien-producto-descuento {
+  font-weight: 400;
+  color: #C83228;
+}
+
+/* botón comprar */
+.tambien-producto-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  width: 150px;
+  height: 45px;
+  border-radius: 999px;
+  background-color: #C83228;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.tambien-producto-boton:active {
+  background-color: #A02820;
+}
+
+.tambien-producto-boton:focus-visible {
+  outline: 2px solid #0F214A;
+  outline-offset: 3px;
+}
+
+
 
 
 
@@ -1092,7 +1197,31 @@ p,
 /* MOBILE*/
 @media (max-width: 500px) {
 
-    /*----- HEADER -----*/
+  /*----- FUENTES -----*/
+  h1 {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h4 {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  p,
+  .buscador-campo {
+    font-size: 14px;
+  }
+
+  /*----- HEADER -----*/
   body {
     padding-top: 85px;
   }
@@ -1221,7 +1350,29 @@ p,
     height: 40px;
   }
 
-/* TIENDA */
+  /*----- TIENDA: HERO -----*/
+  .hero-tienda-imagen {
+    height: 320px;
+    object-fit: cover;
+  }
+
+  .hero-tienda-textos {
+    gap: 20px;
+    padding: 40px 5%;
+  }
+
+  .hero-tienda-subtitulo {
+    gap: 8px;
+    letter-spacing: 0.15em;
+  }
+
+  .hero-tienda-subtitulo::before,
+  .hero-tienda-subtitulo::after {
+    width: 18px;
+    height: 18px;
+  }
+
+  /*----- TIENDA: MERCH -----*/
   .merch {
     padding: 0 5%;
   }
@@ -1230,57 +1381,159 @@ p,
     grid-template-columns: 1fr;
     gap: 40px;
   }
- 
+
   .merch-producto-transferencia {
     max-width: 100%;
   }
 
-
-    /*----- FICHA PRODUCTO MUG -----*/
-  .producto-mug {
-    padding: 40px 5% 60px;
+  /*----- TIENDA: SECTION BOTONES -----*/
+  .section-botones {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 75px 5%;
   }
- 
+
+  /*----- TIENDA: PREGUNTAS FRECUENTES -----*/
+  .preguntas-frecuentes {
+    padding: 0 5%;
+  }
+
+  .preguntas-frecuentes-contenido {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .preguntas-frecuentes-item,
+  .preguntas-frecuentes-pregunta {
+    border-radius: 35px;
+  }
+
+  .preguntas-frecuentes-pregunta {
+    min-height: 70px;
+    padding: 15px 20px;
+  }
+
+  .preguntas-frecuentes-respuesta {
+    padding: 0 20px 24px;
+  }
+
+  .preguntas-frecuentes-ilustracion {
+    justify-self: center;
+    width: 70%;
+  }
+
+  /*----- FICHA PRODUCTO MUG -----*/
+  .producto-mug {
+    padding: 40px 5% 0;
+  }
+
   .producto-mug-ilustracion {
     display: none;
   }
- 
+
   .producto-mug-articulos {
     grid-template-columns: 1fr;
     gap: 40px;
   }
- 
+
   .precio-mug-acciones {
     flex-wrap: wrap;
     gap: 20px 25px;
   }
- 
+
   .precio-mug-nota {
     max-width: 100%;
   }
 
-    /*----- FOOTER -----*/
+    .merch-producto-transferencia {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .merch-producto-boton {
+    height: 40px;
+    padding: 0 28px;
+    font-size: 16px;
+  }
+
+    .precio-mug-transferencia {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .precio-mug-cantidad {
+    font-size: 16px;
+  }
+
+  .precio-mug-boton {
+    height: 40px;
+    padding: 0 28px;
+    font-size: 16px;
+  }
+
+  .precio-mug-descripcion {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  /* también */
+  .tambien {
+    margin-top: 75px;
+    padding: 0 5% 75px;
+  }
+
+  .tambien-productos {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .tambien-producto {
+    width: 100%;
+  }
+
+  .tambien-producto-transferencia {
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .tambien-producto-boton {
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  /*----- FOOTER -----*/
   .footer {
     padding-top: 60px;
   }
- 
+
   .footer-contenido {
     flex-direction: column;
     gap: 30px;
     padding: 0 5% 27px;
   }
- 
+
   .footer-info {
     gap: 30px;
     justify-content: flex-start;
   }
- 
+
   .footer-suscripcion {
     flex: none;
     width: 100%;
     min-width: 0;
   }
- 
+
+  .footer-alfajor {
+    display: none;
+  }
+
+  .footer-comunidad {
+    flex: 1 1 100%;
+  }
+
   .footer-legales {
     flex-wrap: wrap;
     height: auto;

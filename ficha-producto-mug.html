@@ -54,7 +54,130 @@
         </header>
 
         <main>  
+            <!-- Producto mug -->
+            <section class="producto-mug">
 
+                <!-- ilustración de fondo -->
+                <img class="producto-mug-ilustracion" src="images/svg/ilus-cohete.svg" alt="" width="789" height="879">
+
+                <div class="producto-mug-contenido">
+
+                    <p class="producto-mug-ruta">Inicio> Tienda> Jarro mug “Astronauta”</p>
+
+                    <div class="producto-mug-articulos">
+
+                        <!-- carrusel -->
+                        <article class="carrusel-mug">
+                             <div class="carrusel-mug-pista">
+                                <video class="carrusel-mug-video" src="images/ficha-producto-mug/png/mug_video.mp4" width="778" height="778" autoplay muted loop playsinline aria-label="Video del jarro mug Astronauta"></video>
+                                <img class="carrusel-mug-imagen" src="images/ficha-producto-mug/png/mug-2.png" alt="Jarro mug “Astronauta”, vista 2" width="778" height="778">
+                                <img class="carrusel-mug-imagen" src="images/ficha-producto-mug/png/mug-3.png" alt="Jarro mug “Astronauta”, vista 3" width="778" height="778">
+                                <img class="carrusel-mug-imagen" src="images/ficha-producto-mug/png/mug-4.png" alt="Jarro mug “Astronauta”, vista 4" width="778" height="778">
+                            </div>
+
+                            <div class="carrusel-mug-flechas">
+                                <button class="carrusel-mug-flecha carrusel-mug-flecha-anterior" type="button" aria-label="Anterior"></button>
+                                <button class="carrusel-mug-flecha carrusel-mug-flecha-siguiente" type="button" aria-label="Siguiente"></button>
+                            </div>
+                        </article>
+
+                        <!-- precio y descripción -->
+                        <article class="precio-mug">
+                            <h2 class="precio-mug-titulo">Jarro mug “Astronauta”</h2>
+                            <h4 class="precio-mug-subtitulo">¡Un clásico del Sur en tu mesa!</h4>
+
+                            <h3 class="precio-mug-precio">$32.000,00</h3>
+                            <p class="precio-mug-transferencia"><strong class="precio-mug-destacado">$28.800,00</strong> con transferencia<br>o depósito bancario.</p>
+                            <p class="precio-mug-transferencia"><strong class="precio-mug-destacado">10% de descuento</strong> pagando con<br>transferencia o depósito bancario</p>
+
+                            <!-- Unidades + comprar -->
+                            <div class="precio-mug-acciones">
+                                <div class="precio-mug-unidades">
+                                    <button class="precio-mug-menos" type="button" aria-label="Restar una unidad"></button>
+                                    <output class="precio-mug-cantidad" aria-live="polite">0</output>
+                                    <button class="precio-mug-mas" type="button" aria-label="Sumar una unidad"></button>
+                                </div>
+                                <a class="precio-mug-boton" href="#">Comprar</a>
+                            </div>
+
+                            <p class="precio-mug-nota">Nota: El precio con descuento por pago con transferencia o depósito bancario se recalculará automáticamente al elegir el modo de pago.</p>
+
+                            <img class="precio-mug-estrella" src="images/svg/estrella.svg" alt="" width="26" height="31">
+
+                            <h3 class="precio-mug-descripcion-titulo">Descripción</h3>
+                            <p class="precio-mug-descripcion">Cerámica de alta calidad.<br>Estampa del Capitán del Espacio en color café.<br>Capacidad de 330 ml.<br>NO APTO MICROONDAS NI LAVAVAJILLAS.</p>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+<script>
+  // ---------- Carrusel ----------
+  const pista = document.querySelector('.carrusel-mug-pista');
+  const diapositivas = pista.children;
+  const video = pista.querySelector('.carrusel-mug-video');
+  let actual = 0;
+
+  function actualizarVideo() {
+    if (actual === 0) {
+      video.play().catch(function () {});
+    } else {
+      video.pause();
+    }
+  }
+
+  function irA(indice) {
+    actual = (indice + diapositivas.length) % diapositivas.length;
+    pista.scrollTo({ left: actual * pista.clientWidth, behavior: 'smooth' });
+    actualizarVideo();
+  }
+
+  document.querySelector('.carrusel-mug-flecha-anterior').addEventListener('click', function () {
+    irA(actual - 1);
+  });
+
+  document.querySelector('.carrusel-mug-flecha-siguiente').addEventListener('click', function () {
+    irA(actual + 1);
+  });
+
+
+  video.addEventListener('click', function () {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+
+  let esperaScroll;
+  pista.addEventListener('scroll', function () {
+    clearTimeout(esperaScroll);
+    esperaScroll = setTimeout(function () {
+      actual = Math.round(pista.scrollLeft / pista.clientWidth);
+      actualizarVideo();
+    }, 100);
+  });
+
+  window.addEventListener('resize', function () {
+    pista.scrollTo({ left: actual * pista.clientWidth, behavior: 'auto' });
+  });
+
+  const cantidad = document.querySelector('.precio-mug-cantidad');
+  let unidades = 0;
+
+  document.querySelector('.precio-mug-menos').addEventListener('click', function () {
+    if (unidades > 0) {
+      unidades = unidades - 1;
+      cantidad.textContent = unidades;
+    }
+  });
+
+  document.querySelector('.precio-mug-mas').addEventListener('click', function () {
+    unidades = unidades + 1;
+    cantidad.textContent = unidades;
+  });
+</script>
         </main>
 
         <footer class="footer">
@@ -101,5 +224,5 @@
                 <a class="footer-legales-enlace" href="#">Todos los derechos reservados.</a>
             </div>
         </footer>
-        
+
     </body>

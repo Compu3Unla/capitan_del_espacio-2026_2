@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tienda | Capitán del Espacio</title>
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="icon" type="image/x-icon" href="images/favicon-cde.ico">
+    </head>
+
+    <body>
+        
+        <header class="encabezado" id="encabezado">
+            <div class="encabezado-interior">
+
+                <!-- Menú hamburguesa (responsive) -->
+                <input class="encabezado-casilla" type="checkbox" id="casilla-menu" aria-controls="panel">
+                <label class="encabezado-menu" for="casilla-menu" aria-label="Abrir o cerrar menú"></label>
+
+                <!-- Logo -->
+                <a class="encabezado-logo" href="index.html" aria-label="Capitán del Espacio - Inicio">
+                <img src="images/svg/logo-header.svg" alt="Capitán del Espacio" width="129" height="60">
+                </a>
+
+                <!-- navegación y buscador -->
+                <div class="panel" id="panel">
+                    <!-- Navegación -->
+                    <nav class="navegacion" aria-label="Principal">
+                        <ul class="navegacion-lista">
+                        <!-- acá después hay que cambiar el href por los archivos de productos, historia y distribución -->
+                            <li><a class="navegacion-enlace navegacion-enlace-productos" href="#">Productos</a></li>
+                            <li><a class="navegacion-enlace navegacion-enlace-historia" href="#">Historia</a></li>
+                            <li><a class="navegacion-enlace navegacion-enlace-distribucion" href="#">Distribución</a></li>
+                            <li><a class="navegacion-enlace navegacion-enlace-tienda" href="tienda.html">Tienda</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Buscador -->
+                    <div class="buscador" role="search">
+                        <label class="oculto-visual" for="campo-busqueda">Buscar en el sitio</label>
+                        <input class="buscador-campo" id="campo-busqueda" type="search" name="q" autocomplete="off">
+                        <button class="buscador-boton" type="submit" aria-label="Buscar"></button>
+                    </div>
+                </div>
+
+                <!-- Acciones y botones -->
+                <div class="acciones">
+                    <!-- acá después hay que cambiar el href por los archivos de registro y de carrito -->
+                    <a class="acciones-boton acciones-boton-registro" href="#" aria-label="Iniciar sesión"></a>
+                    <a class="acciones-boton acciones-boton-carrito" href="#" aria-label="Carrito"></a>
+                </div>
+
+            </div>
+        </header>
+
+        <main>  
+
+        </main>
+
+        <footer class="footer">
+            <div class="footer-contenido">
+ 
+                <!-- Redes y datos de contacto -->
+                <div class="footer-info">
+                    <ul class="footer-redes">
+                        <li><a class="footer-redes-enlace footer-redes-instagram" href="#" aria-label="Instagram"></a></li>
+                        <li><a class="footer-redes-enlace footer-redes-facebook" href="#" aria-label="Facebook"></a></li>
+                        <li><a class="footer-redes-enlace footer-redes-tiktok" href="#" aria-label="TikTok"></a></li>
+                        <li><a class="footer-redes-enlace footer-redes-youtube" href="#" aria-label="YouTube"></a></li>
+                    </ul>
+ 
+                    <address class="footer-contacto">
+                        <p>4253-5224</p>
+                        <p>info@capitandelespaciomr.com.ar</p>
+                        <p>Gran Canaria 1250, B1879, Quilmes, Buenos Aires.</p>
+                    </address>
+                </div>
+ 
+                <!-- Suscripción -->
+                <div class="footer-suscripcion">
+                    <img class="footer-alfajor" src="images/svg/ilus-alfajor-footer.svg" alt="" width="93" height="121">
+ 
+                    <div class="footer-comunidad">
+                        <p class="footer-comunidad-titulo">Sumate a nuestra comunidad</p>
+                        <p class="footer-comunidad-texto">Suscribite y recibí un 10% off en tu próxima compra.</p>
+ 
+                        <form class="footer-formulario" action="mailto:info@capitandelespaciomr.com.ar" method="get">
+                            <input type="hidden" name="subject" value="Suscripción a la comunidad">
+                            <label class="oculto-visual" for="campo-correo">Tu correo electrónico</label>
+                            <input class="footer-formulario-campo" id="campo-correo" type="email" name="body" placeholder="ejemplo@gmail.com.ar" autocomplete="email" required>
+                        </form>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- Legales -->
+            <div class="footer-legales">
+                <p class="footer-legales-texto">©2026 Capitán del Espacio.</p>
+                <a class="footer-legales-enlace" href="#">Política de privacidad.</a>
+                <a class="footer-legales-enlace" href="#">Términos y condiciones.</a>
+                <a class="footer-legales-enlace" href="#">Todos los derechos reservados.</a>
+            </div>
+        </footer>
+        
+    </body>

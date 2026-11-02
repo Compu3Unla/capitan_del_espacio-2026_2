@@ -102,5 +102,75 @@
             </div>
         </footer>
 
+        
+        <!-- Pop-up de inicio de sesión / pegar al final del body
+         esta parte es mucho muy importante -->
+        <dialog class="inicio-sesion" id="inicio-sesion" aria-labelledby="inicio-sesion-titulo">
+
+            <img class="inicio-sesion-imagen" src="images/inicio-sesion/png/gorra-close-up.png" alt="" width="660" height="960">
+
+            <button class="inicio-sesion-cerrar" type="button" aria-label="Cerrar"></button>
+
+            <div class="inicio-sesion-contenido">
+                <div class="inicio-sesion-formulario">
+
+                    <div class="inicio-sesion-superior">
+                        <h2 class="inicio-sesion-titulo" id="inicio-sesion-titulo">Iniciar sesión</h2>
+ 
+                        <a class="inicio-sesion-google" href="#">
+                            <img class="inicio-sesion-google-logo" src="images/svg/google.svg" alt="" width="21.5" height="21.5">
+                            <h3 class="inicio-sesion-google-texto">Continuar con Google</h3>
+                        </a>
+ 
+                    <hr class="inicio-sesion-linea">
+                </div>
+
+                    <h2 class="inicio-sesion-titulo">Ingresar de otra forma:</h2>
+
+                    <form class="inicio-sesion-campos" action="#">
+                        <div class="inicio-sesion-grupo">
+                            <h3 class="inicio-sesion-etiqueta"><label for="inicio-sesion-email">Email:</label></h3>
+                            <input class="inicio-sesion-entrada inicio-sesion-entrada-email" id="inicio-sesion-email" type="email" name="email" placeholder="ejemplo@mail.com.ar" autocomplete="email">
+                        </div>
+
+                        <div class="inicio-sesion-grupo">
+                            <h3 class="inicio-sesion-etiqueta"><label for="inicio-sesion-clave">Contraseña:</label></h3>
+                            <input class="inicio-sesion-entrada inicio-sesion-entrada-clave" id="inicio-sesion-clave" type="password" name="clave" placeholder="Ingresá tu contraseña" autocomplete="current-password">
+                        </div>
+
+                        <a class="inicio-sesion-olvido" href="#">¿Olvidaste tu contraseña?</a>
+
+                        <a class="inicio-sesion-boton" href="#">Iniciar sesión</a>
+                    </form>
+
+                    <h4 class="inicio-sesion-cuenta">¿No tenés cuenta aún? <a class="inicio-sesion-crear" href="registro.html">Crear cuenta</a></h4>
+
+                </div>
+            </div>
+        </dialog>
+
+<!-- esto es para que el pop-up de inicio de sesión funcione
+ esta parte es mucho muy importante -->
+<script>
+  const ventanaInicioSesion = document.getElementById('inicio-sesion');
+  const botonRegistro = document.querySelector('.acciones-boton-registro');
+  const botonCerrar = ventanaInicioSesion.querySelector('.inicio-sesion-cerrar');
+
+  botonRegistro.addEventListener('click', function (evento) {
+    evento.preventDefault();
+    ventanaInicioSesion.showModal();
+  });
+
+  botonCerrar.addEventListener('click', function () {
+    ventanaInicioSesion.close();
+  });
+
+  ventanaInicioSesion.addEventListener('click', function (evento) {
+    if (evento.target === ventanaInicioSesion) {
+      ventanaInicioSesion.close();
+    }
+  });
+</script>
+
     </body>
 </html>

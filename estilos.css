@@ -540,6 +540,276 @@ p,
 }
 
 
+/* inicio de sesión pop-up */
+.inicio-sesion {
+  width: 68.5%;
+  height: 88%;
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #F2EBD9;
+  color: #0F214A;
+}
+
+.inicio-sesion[open] {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+}
+
+.inicio-sesion::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+body:has(.inicio-sesion[open]) {
+  overflow: hidden;
+}
+
+.inicio-sesion-imagen {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 5px solid #F2EBD9;
+  object-fit: cover;
+}
+
+.inicio-sesion-cerrar {
+  position: absolute;
+  top: 30px;
+  right: 4.5455%;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  background: url("images/svg/cerrar.svg") no-repeat center / 100% 100%;
+  cursor: pointer;
+}
+
+.inicio-sesion-cerrar:focus-visible {
+  outline: 2px solid #0F214A;
+  outline-offset: 3px;
+}
+
+.inicio-sesion-contenido {
+  display: flex;
+  overflow-y: auto;
+  padding: 30px 9%;
+}
+
+.inicio-sesion-formulario {
+  width: 100%;
+}
+
+.inicio-sesion-titulo {
+  margin: 0 0 24px;
+  color: #C83228;
+}
+
+.inicio-sesion-google {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  border-radius: 999px;
+  background-color: #FFFFFF;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #0F214A;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.inicio-sesion-google:hover,
+.inicio-sesion-google:focus-visible {
+  background-color: #E6E6E6;
+}
+
+.inicio-sesion-google:focus-visible {
+  outline: 2px solid #0F214A;
+  outline-offset: 3px;
+}
+
+
+.inicio-sesion-contenido {
+  display: flex;
+  overflow-y: auto;
+  padding: 120px 7%;
+}
+ 
+.inicio-sesion-formulario {
+  width: 100%;
+  margin: auto 0; 
+}
+ 
+.inicio-sesion-superior {
+  width: 95%;
+  margin: 0 auto;
+}
+ 
+.inicio-sesion-titulo {
+  margin: 0 0 24px;
+  color: #C83228;
+}
+ 
+.inicio-sesion-google {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  border-radius: 999px;
+  background-color: #FFFFFF;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #0F214A;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+ 
+.inicio-sesion-google:hover,
+.inicio-sesion-google:focus-visible {
+  background-color: #E6E6E6;
+}
+ 
+.inicio-sesion-google:focus-visible {
+  outline: 2px solid #0F214A;
+  outline-offset: 3px;
+}
+
+.inicio-sesion-google-logo {
+  position: absolute;
+  top: 19px;
+  left: 40px;
+  width: 21.5px;
+  height: 21.5px;
+}
+
+.inicio-sesion-google-texto {
+  margin: 0;
+}
+
+.inicio-sesion-linea {
+  height: 3px;
+  margin: 50px 0;
+  border: 0;
+  border-radius: 3px;
+  background: #C83228;
+}
+
+.inicio-sesion-titulo + .inicio-sesion-campos {
+  margin-top: 30px;
+}
+
+.inicio-sesion-grupo + .inicio-sesion-grupo {
+  margin-top: 30px;
+}
+
+.inicio-sesion-etiqueta {
+  display: block;
+  margin: 0 0 15px;
+}
+
+.inicio-sesion-entrada {
+  display: block;
+  width: 100%;
+  height: 60px;
+  padding: 0 20px 0 86px;
+  border: 0;
+  border-radius: 999px;
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #0F214A;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  outline: none;
+}
+
+.inicio-sesion-entrada::placeholder {
+  color: rgba(15, 33, 74, 0.5); 
+  opacity: 1;
+}
+
+.inicio-sesion-entrada:focus {
+  outline: 2px solid #C83228;
+  outline-offset: 2px;
+}
+
+.inicio-sesion-entrada-email {
+  background-image: url("images/svg/mail.svg");
+  background-position: 26px center;
+  background-size: 30px 19.5px;
+}
+
+.inicio-sesion-entrada-clave {
+  background-image: url("images/svg/candado.svg");
+  background-position: 40px center;
+  background-size: 16.3px 22.4px;
+}
+
+.inicio-sesion-olvido {
+  display: block;
+  margin-top: 17px;
+  text-align: right;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #0F214A;
+  text-decoration: none;
+}
+
+.inicio-sesion-boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  margin-top: 50px;
+  border-radius: 999px;
+  background-color: #C83228;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.inicio-sesion-boton:active {
+  background-color: #A02820;
+}
+
+.inicio-sesion-boton:focus-visible {
+  outline: 2px solid #0F214A;
+  outline-offset: 3px;
+}
+
+/* crear cuenta */
+.inicio-sesion-cuenta {
+  margin: 10px 0 0;
+  text-align: center;
+  color: #C83228;
+}
+
+.inicio-sesion-crear {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #C83228;
+  text-decoration: none;
+}
+
+.inicio-sesion-crear:hover,
+.inicio-sesion-crear:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  outline: none;
+}
+
+
 
 
 /* ----- TIENDA -----*/
@@ -1199,7 +1469,7 @@ p,
 
   /*----- FUENTES -----*/
   h1 {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 18px;
   }
 
@@ -1349,6 +1619,75 @@ p,
   .buscador-boton {
     height: 40px;
   }
+
+  /* inicio sesion */
+
+  .inicio-sesion {
+    width: 92%;
+  }
+ 
+  .inicio-sesion[open] {
+    grid-template-columns: 100%;
+  }
+ 
+  .inicio-sesion-imagen {
+    display: none;
+  }
+ 
+  .inicio-sesion-cerrar {
+    top: 20px;
+    right: 6%;
+  }
+ 
+  .inicio-sesion-contenido {
+    padding: 40px 6% 30px;
+  }
+ 
+  .inicio-sesion-superior,
+  .inicio-sesion-boton {
+    width: 100%;
+  }
+ 
+  .inicio-sesion-google,
+  .inicio-sesion-entrada,
+  .inicio-sesion-boton {
+    height: 50px;
+  }
+ 
+  .inicio-sesion-google-logo {
+    top: 14px;
+    left: 20px;
+  }
+ 
+  .inicio-sesion-entrada {
+    padding-left: 70px;
+    font-size: 14px;
+  }
+ 
+  .inicio-sesion-entrada-email {
+    background-position: 16px center;
+  }
+ 
+  .inicio-sesion-entrada-clave {
+    background-position: 24px center;
+  }
+ 
+  .inicio-sesion-olvido {
+    font-size: 14px;
+  }
+ 
+  .inicio-sesion-boton {
+    font-size: 16px;
+  }
+ 
+  .inicio-sesion-crear {
+    font-size: 15px;
+  }
+
+  .inicio-sesion-linea {
+    margin: 40px 0;
+  }
+ 
 
   /*----- TIENDA: HERO -----*/
   .hero-tienda-imagen {

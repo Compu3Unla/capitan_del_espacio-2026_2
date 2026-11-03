@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Historia | Capitán del Espacio</title>
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="icon" type="image/x-icon" href="images/favicon-cde.ico">
+    </head>
+
+    <body>
+        
+        <header class="encabezado" id="encabezado">
+            <div class="encabezado-interior">
+
+                <!-- Menú hamburguesa (responsive) -->
+                <input class="encabezado-casilla" type="checkbox" id="casilla-menu" aria-controls="panel">
+                <label class="encabezado-menu" for="casilla-menu" aria-label="Abrir o cerrar menú"></label>
+
+                <!-- Logo -->
+                <a class="encabezado-logo" href="index.html" aria-label="Capitán del Espacio - Inicio">
+                <img src="images/svg/logo-header.svg" alt="Capitán del Espacio" width="129" height="60">
+                </a>
+
+                <!-- navegación y buscador -->
+                <div class="panel" id="panel">
+                    <!-- Navegación -->
+                    <nav class="navegacion" aria-label="Principal">
+                        <ul class="navegacion-lista">
+                        <!-- acá después hay que cambiar el href por los archivos de productos, historia y distribución -->
+                            <li><a class="navegacion-enlace navegacion-enlace-productos" href="#">Productos</a></li>
+                            <li><a class="navegacion-enlace navegacion-enlace-historia" href="historia.html">Historia</a></li>
+                            <li><a class="navegacion-enlace navegacion-enlace-distribucion" href="#">Distribución</a></li>
+                            <li><a class="navegacion-enlace navegacion-enlace-tienda" href="tienda.html">Tienda</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Buscador -->
+                    <div class="buscador" role="search">
+                        <label class="oculto-visual" for="campo-busqueda">Buscar en el sitio</label>
+                        <input class="buscador-campo" id="campo-busqueda" type="search" name="q" autocomplete="off">
+                        <button class="buscador-boton" type="submit" aria-label="Buscar"></button>
+                    </div>
+                </div>
+
+                <!-- Acciones y botones -->
+                <div class="acciones">
+                    <!-- acá después hay que cambiar el href por los archivos de registro y de carrito -->
+                    <a class="acciones-boton acciones-boton-registro" href="#" aria-label="Iniciar sesión"></a>
+                    <a class="acciones-boton acciones-boton-carrito" href="#" aria-label="Carrito"></a>
+                </div>
+
+            </div>
+        </header>
+
+        <main>  
+            <section class="hero-historia">
+                <img class="hero-historia-imagen activa" src="images/nuestra-historia/historia-hero1.jpg" alt="banner-rotativo-cde"
+                    width="1920" height="600">
+                <img class="hero-historia-imagen" src="images/nuestra-historia/historia-hero2.jpg" alt="banner-rotativo-cde"
+                    width="1920" height="600">
+                <img class="hero-historia-imagen" src="images/nuestra-historia/historia-hero3.jpg" alt="banner-rotativo-cde"
+                    width="1920" height="600">
+                <button class="hero-historia-anterior">❮</button>
+                <button class="hero-historia-siguiente">❯</button>
+                <div class="hero-historia-textos">
+                    <h1 class="hero-historia-titulo">La <strong class="hero-historia-destacado">conquista</strong> del sabor</h1>
+                    <h2 class="hero-historia-subtitulo">La historia detrás del alfajor</h2>
+                </div>
+            </section>
+            <section class="historia-quienes-somos">
+                <p class="historia-ruta">Inicio> Nuestra historia</p>
+                <div class="historia-quienes-somos-contenido">
+                    <div class="historia-quienes-somos-textos">
+                        <h2>¿Quiénes somos?</h2>
+                        <h4>Somos una empresa argentina nacida en el sur del Gran Buenos Aires. Desde nuestros comienzos en la ciudad de Quilmes, la marca fue creciendo sin perder el vínculo con el barrio y con las personas que hicieron de este alfajor un ícono de zona sur.</h4>
+                    </div>
+                    <img class="historia-quienes-somos-imagen" src="images/nuestra-historia/lineo.jpg" alt="lineo" width="620" height="402">
+                </div>
+            </section>
+            <section class="historia-nuestros-comienzos">
+                <h2>Nuestros comienzos</h2>
+                <div class="historia-nuestros-comienzos-parrafos">
+                    <p>Nuestra historia comienza un 2 de febrero de 1962, cuando Ángel Lineo de Pascalis y Arturo Amado fundaron una pequeña empresa en la localidad de Ezpeleta y comenzaron a producir alfajores.</p>
+                    <p>Los primeros años estuvieron marcados por una producción principalmente artesanal. En 1963 mudaron su fábrica a un lugar con un pococ más de espacio en Bernal Oeste para seguir creciendo.</p>
+                    <p>Con el tiempo la producción fue creciendo y asentando una conexión fuerte con su lugar de origen. Así es que en 1972 terminan por trasladar su fábrica a donde actualmente se encuentra ubicada, en la calle Gran Canaria en la localidad de Quilmes.</p>
+                </div>
+            </section>
+            <section class="historia-porque-capitanes">
+                <div class="historia-porque-capitanes-textos">
+                    <h2>¿Por qué capitanes del espacio?</h2>
+                    <div class="historia-porque-capitanes-parrafos">
+                        <p>Capitán del Espacio nació en 1962, en un momento en donde el mundo entero hablaba de una carrera hacia la luna, los viajes espaciales y la exploración de un cosmos.</p>
+                        <p>Así es que nació el nombre de la empresa, de un tema que conmovía al mundo entero y que terminó formando parte de una marca que recién comenzaba su propia historia.</p>
+                    </div>
+                </div>
+                <img src="images/svg/ilus-cohete.svg" alt="cohete" width="600" height="925">
+            </section>
+            <section class="historia-linea-de-tiempo">
+                
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <div class="footer-contenido">
+ 
+                <!-- Redes y datos de contacto -->
+                <div class="footer-info">
+                    <ul class="footer-redes">
+                        <li><a class="footer-redes-enlace footer-redes-instagram" href="#" aria-label="Instagram"></a></li>
+                        <li><a class="footer-redes-enlace footer-redes-facebook" href="#" aria-label="Facebook"></a></li>
+                        <li><a class="footer-redes-enlace footer-redes-tiktok" href="#" aria-label="TikTok"></a></li>
+                        <li><a class="footer-redes-enlace footer-redes-youtube" href="#" aria-label="YouTube"></a></li>
+                    </ul>
+ 
+                    <address class="footer-contacto">
+                        <p>4253-5224</p>
+                        <p>info@capitandelespaciomr.com.ar</p>
+                        <p>Gran Canaria 1250, B1879, Quilmes, Buenos Aires.</p>
+                    </address>
+                </div>
+ 
+                <!-- Suscripción -->
+                <div class="footer-suscripcion">
+                    <img class="footer-alfajor" src="images/svg/ilus-alfajor-footer.svg" alt="" width="93" height="121">
+ 
+                    <div class="footer-comunidad">
+                        <p class="footer-comunidad-titulo">Sumate a nuestra comunidad</p>
+                        <p class="footer-comunidad-texto">Suscribite y recibí un 10% off en tu próxima compra.</p>
+ 
+                        <form class="footer-formulario" action="mailto:info@capitandelespaciomr.com.ar" method="get">
+                            <input type="hidden" name="subject" value="Suscripción a la comunidad">
+                            <label class="oculto-visual" for="campo-correo">Tu correo electrónico</label>
+                            <input class="footer-formulario-campo" id="campo-correo" type="email" name="body" placeholder="ejemplo@gmail.com.ar" autocomplete="email" required>
+                        </form>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- Legales -->
+            <div class="footer-legales">
+                <p class="footer-legales-texto">©2026 Capitán del Espacio.</p>
+                <a class="footer-legales-enlace" href="#">Política de privacidad.</a>
+                <a class="footer-legales-enlace" href="#">Términos y condiciones.</a>
+                <a class="footer-legales-enlace" href="#">Todos los derechos reservados.</a>
+            </div>
+        </footer>
+        <script>
+            const imagenesHistoria = document.querySelectorAll(".hero-historia-imagen");
+            const anteriorHistoria = document.querySelector(".hero-historia-anterior");
+            const siguienteHistoria = document.querySelector(".hero-historia-siguiente");
+            let imagenActual = 0;
+            function mostrarBanner(indice) {
+                imagenesHistoria[imagenActual].classList.remove("activa");
+                imagenActual = (indice + imagenesHistoria.length) % imagenesHistoria.length;
+
+                imagenesHistoria [imagenActual].classList.add("activa");
+            }
+            function cambiarBanner() {
+                mostrarBanner(imagenActual + 1);
+            }
+
+            anteriorHistoria.addEventListener("click", function() {
+                mostrarBanner(imagenActual - 1);
+            });
+
+            siguienteHistoria.addEventListener("click", function() {
+                mostrarBanner(imagenActual + 1);
+            });
+
+            setInterval(cambiarBanner, 3000);
+        </script>
+    </body>

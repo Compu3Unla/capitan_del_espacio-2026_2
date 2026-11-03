@@ -862,7 +862,9 @@ body:has(.inicio-sesion[open]) {
  
 /* estrellas */
 .hero-tienda-subtitulo::before,
-.hero-tienda-subtitulo::after {
+.hero-tienda-subtitulo::after,
+.hero-historia-subtitulo::before,
+.hero-historia-subtitulo::after {
   content: "";
   flex-shrink: 0;
   width: 26px;
@@ -1457,6 +1459,177 @@ body:has(.inicio-sesion[open]) {
   outline: 2px solid #0F214A;
   outline-offset: 3px;
 }
+
+/*------HISTORIA------*/
+
+  .hero-historia {
+    margin-top: 120px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-historia-imagen {
+    height: 100%;
+    width: 100%;
+    display: none;
+    margin-top: 120px;
+  }
+
+  .hero-historia-imagen.activa {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-historia-anterior, .hero-historia-siguiente {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .hero-historia-anterior {
+    left: 30px;
+  }
+
+  .hero-historia-siguiente {
+    right: 30px;
+  }
+
+  .hero-historia-textos {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  padding: 0 8%;
+  text-align: center;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 17%;
+  transform: translateY(-50%);
+}
+ 
+.hero-historia-titulo {
+  margin: 0;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #F2EBD9;
+}
+ 
+.hero-historia-destacado {
+  font-weight: 400;
+  color: #C83228;
+}
+ 
+.hero-historia-subtitulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #F2EBD9;
+}
+
+.historia-quienes-somos {
+  display: flex;
+  flex-direction: column;
+}
+
+.historia-quienes-somos-contenido {
+  display: flex;
+  align-items: flex-start;
+  gap: 120px;
+  justify-content: center;
+}
+
+.historia-ruta {
+  margin: 0 0 30px;
+  padding: 80px 133px 0;
+}
+
+.historia-quienes-somos-textos {
+  display: flex;
+  width: 520px;
+  height: 224px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.historia-quienes-somos-textos h2 {
+  color: rgb(200, 50, 40);
+}
+
+.historia-quienes-somos-textos h4 {
+  margin: 0;
+  width: 520px;
+}
+
+.historia-quienes-somos-imagen {
+  border-radius: 20px;
+  background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.historia-nuestros-comienzos {
+  width: 100%;
+  height: 830px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 1.92%, #F2EBD9 30.29%, #F2EBD9 82.21%, rgba(255, 255, 255, 0.50) 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 133px;
+}
+
+.historia-nuestros-comienzos-parrafos {
+  display: flex;
+  flex-direction: column;
+  width: 580px;
+}
+
+.historia-nuestros-comienzos h2 {
+  color: rgb(200, 50, 40);
+}
+
+.historia-porque-capitanes {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 0 133px;
+  justify-content: space-between;
+}
+
+.historia-porque-capitanes-textos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 100px;
+}
+
+.historia-porque-capitanes-textos h2 {
+  color: rgb(200, 50, 40);
+}
+
+.historia-porque-capitanes-parrafos {
+  display: flex;
+  flex-direction: column;
+  width: 580px;
+}
+
+.historia-linea-de-tiempo {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 1.92%, #F2EBD9 30.29%, #F2EBD9 82.21%, rgba(255, 255, 255, 0.50) 100%); 
+}
+
 
 
 

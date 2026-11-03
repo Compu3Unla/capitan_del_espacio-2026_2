@@ -4,24 +4,21 @@
 
 @font-face {
   font-family: "Righteous";
-  src: url("../fonts/Righteous-Regular.woff2") format("woff2"),
-    url("../fonts/Righteous-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/Righteous-Regular.ttf) format(ttf)
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(fonts/Inter_Regular.ttf) format(ttf);
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("tp4/fonts/Inter-Regular.woff2") format("woff2"),
-    url("tp4/fonts/Inter-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("tp4/fonts/Inter-SemiBold.woff2") format("woff2"),
-    url("tp4/fonts/Inter-SemiBold.ttf") format("truetype");
+  src: url(fonts/Inter_SemiBold.ttf) format(ttf);
   font-weight: 600;
   font-display: swap;
 }
@@ -1964,15 +1961,15 @@ body:has(.inicio-sesion[open]) {
 }
 
 .button-productos {
-    display: block;
-    padding: 0 25px;
-    height: 32px;
-    margin: 30px auto;
-    border: none;
-    border-radius: 20px;
-    background-color: #C83228;
-    color: white;
-    text-align: center;
+  display: block;
+  padding: 0 25px;
+  height: 32px;
+  margin: 30px auto;
+  border: none;
+  border-radius: 20px;
+  background-color: #C83228;
+  color: white;
+  text-align: center;
 }
 
 .distribucion main {
@@ -1982,6 +1979,6 @@ body:has(.inicio-sesion[open]) {
 }
 
 .mapa {
-    border-radius: 15px;
-    overflow: hidden;
+  border-radius: 15px;
+  overflow: hidden;
 }

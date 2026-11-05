@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitán del Espacio</title>
+    <link rel="stylesheet" href="estilos.css"> <!-- Reemplazá con la ruta de tu CSS si es diferente -->
+</head>
+<body>
+
+    <!-- HEADER (Ya provisto por tu compañera / integrado) -->
+    <header class="encabezado">
+        <div class="encabezado-interior">
+            <a href="index.html" class="encabezado-logo">
+                <img src="images/svg/logo-header.svg" alt="Capitán del Espacio">
+            </a>
+            <nav class="navegacion">
+                <ul class="navegacion-lista">
+                    <li><a href="#" class="navegacion-enlace navegacion-enlace-productos">Productos</a></li>
+                    <li><a href="#" class="navegacion-enlace navegacion-enlace-historia">Historia</a></li>
+                    <li><a href="#" class="navegacion-enlace navegacion-enlace-distribucion">Distribución</a></li>
+                    <li><a href="#" class="navegacion-enlace navegacion-enlace-tienda">Tienda</a></li>
+                </ul>
+            </nav>
+            <div class="buscador">
+                <input type="search" class="buscador-campo" placeholder="Buscar...">
+                <button class="buscador-boton" aria-label="Buscar"></button>
+            </div>
+            <div class="acciones">
+                <button class="acciones-boton acciones-boton-registro" aria-label="Registrarse"></button>
+                <button class="acciones-boton acciones-boton-carrito" aria-label="Carrito"></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN (Diseño del Index basado en tus capturas) -->
+    <main>
+        <!-- SECCIÓN HERO / HISTORIA (Sin recuadro) -->
+    <section class="hero-historia">
+        <div class="hero-imagen-contenedor">
+            <video src="images/index/capitannuevo.mp4" autoplay muted loop playsinline class="hero-imagen"></video>
+        </div>
+        <div class="hero-texto-libre">
+            <h1>PRIMEROS EN LA CONQUISTA DEL BUEN GUSTO</h1>
+            <div class="h2-decorativo">
+                <img src="images/svg/estrella.svg" alt="" aria-hidden="true">
+                <h2>DESDE 1962 ELABORANDO EL SABOR QUE NOS UNE</h2>
+                <img src="images/svg/estrella.svg" alt="" aria-hidden="true">
+            </div>
+            <a href="#" class="btn-resultado">Conocenos</a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NUESTROS CLÁSICOS (Con el recuadro contenedor) -->
+    <section class="nuestros-clasicos">
+        <div class="clasicos-contenido-tarjeta">
+            <h2>NUESTROS CLÁSICOS</h2>
+            <div class="alfajores-contenedor">
+                <div class="alfajor-item">
+                    <img src="images/alfajor-simple.png" alt="Alfajor simple Capitán del Espacio">
+                </div>
+                <div class="alfajor-item">
+                    <img src="images/alfajor-de-dulce-de-leche.png" alt="Alfajor de dulce de leche Capitán del Espacio">
+                </div>
+                <div class="alfajor-item">
+                    <img src="images/alfajor-de-tapa-verde.png" alt="Alfajor de tartera / tapa verde Capitán del Espacio">
+                </div>
+            </div>
+            <button class="btn-resultado">Alfajores</button>
+        </div>
+    </section>
+
+        <!-- SECCIÓN CUESTIONARIO / TIRA DE TEXTO -->
+        <section class="cuestionario">
+            <div class="tira-titulo">
+                <div class="marquee">
+                    <div class="fila">
+                        <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
+                        <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
+                        <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
+                        <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
+                        <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cuestionario-grid">
+                <div class="introduccion">
+                    <h4>Descubrí cuál de nuestros clásicos representa mejor tu personalidad y tu forma de vivir los momentos dulces.</h4>
+                    <p>Seleccioná una sola respuesta de cada pregunta y dale click al botón para conocer el resultado.</p>
+                    <button class="btn-resultado">Resultados</button>
+                </div>
+
+                <div class="cuestionario-card">
+                    <p>¿Cómo reaccionas si alguien te pide que le convides de tu alfajor Capitán del Espacio?</p>
+                    <ul>
+                        <li><span class="estrella-viñeta">★</span> Le digo que el Capitán no se comparte, es ley universal.</li>
+                        <li><span class="estrella-viñeta">★</span> Parto la mitad con dolor en el alma pero con bondad.</li>
+                        <li><span class="estrella-viñeta">★</span> Le compro otro para evitar conflictos.</li>
+                    </ul>
+                    <a href="#" class="enlace-flecha"> &gt;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PUBLICIDAD / COMENTARIOS -->
+        <section class="publicidad">
+            <h2>LA ÚNICA PUBLICIDAD QUE NOS IMPORTA</h2>
+            <div class="comentarios">
+                <article class="comentario-item">
+                    <img src="images/juan.png" alt="Juan M." class="comentario-avatar">
+                    <div class="comentario-burbuja">
+                        <p>“Sabor inigualable desde que tengo uso de razón”</p>
+                        <span class="comentario-autor">Juan M.</span>
+                    </div>
+                </article>
+
+                <article class="comentario-item">
+                    <img src="images/agustina.png" alt="Agustina A." class="comentario-avatar">
+                    <div class="comentario-burbuja">
+                        <p>“Arte puro hecho alfajor”</p>
+                        <span class="comentario-autor">Agustina A.</span>
+                    </div>
+                </article>
+
+                <article class="comentario-item">
+                    <img src="images/sofia.png" alt="Sofía G." class="comentario-avatar">
+                    <div class="comentario-burbuja">
+                        <p>“El verdadero orgullo de Quilmes. No hay con qué darle”</p>
+                        <span class="comentario-autor">Sofía G.</span>
+                    </div>
+                </article>
+
+                <article class="comentario-item">
+                    <img src="images/pedro.png" alt="Pedro S." class="comentario-avatar">
+                    <div class="comentario-burbuja">
+                        <p>“Hermoso viaje a la infancia”</p>
+                        <span class="comentario-autor">Pedro S.</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (Ya provisto por tu compañera / integrado) -->
+    <footer class="footer">
+        <div class="footer-contenido">
+            <div class="footer-info">
+                <ul class="footer-redes">
+                    <li><a href="#" class="footer-redes-enlace footer-redes-instagram" aria-label="Instagram"></a></li>
+                    <li><a href="#" class="footer-redes-enlace footer-redes-facebook" aria-label="Facebook"></a></li>
+                    <li><a href="#" class="footer-redes-enlace footer-redes-tiktok" aria-label="TikTok"></a></li>
+                    <li><a href="#" class="footer-redes-enlace footer-redes-youtube" aria-label="YouTube"></a></li>
+                </ul>
+                <address class="footer-contacto">
+                    <p>4253-5224</p>
+                    <p>Gran Canaria 1250, B1879, Quilmes, Buenos Aires.</p>
+                    <p>info@capitandelespaciomr.com.ar </p>
+                </address>
+            </div>
+            
+            <div class="footer-suscripcion">
+                <img src="images/svg/alfajor-footer.svg" alt="" class="footer-alfajor" aria-hidden="true">
+                <div class="footer-comunidad">
+                    <span class="footer-comunidad-titulo">Sumate a nuestra comunidad</span>
+                    <span class="footer-comunidad-texto"> Suscribite y recibí un 10% off en tu próxima compra.</span>
+                    <form class="footer-formulario">
+                        <input type="email" class="footer-formulario-campo" placeholder="Ingresá tu mail aquí">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-legales">
+            <span class="footer-legales-texto">2026 Capitán del Espacio.</span>
+            <a href="#" class="footer-legales-enlace">Políticas de privacidad.</a>
+            <a href="#" class="footer-legales-enlace">Términos y condiciones.</a>
+            <a href="#" class="footer-legales-enlace">Todos los derechos reservados.</a>
+        </div>
+    </footer>
+
+</body>
+</html>

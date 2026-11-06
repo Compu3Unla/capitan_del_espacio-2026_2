@@ -1615,6 +1615,7 @@ body:has(.inicio-sesion[open]) {
   flex-direction: column;
   justify-content: flex-start;
   margin-top: 100px;
+  height: 249px;
 }
 
 .historia-porque-capitanes-textos h2 {
@@ -1628,8 +1629,172 @@ body:has(.inicio-sesion[open]) {
 }
 
 .historia-linea-de-tiempo {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 1.92%, #F2EBD9 30.29%, #F2EBD9 82.21%, rgba(255, 255, 255, 0.50) 100%); 
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 1.92%, #F2EBD9 30.29%, #F2EBD9 82.21%, rgba(255, 255, 255, 0.50) 100%);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 1100px;
+  align-items: center;
+  padding: 200px 200px;
 }
+
+.historia-linea-de-tiempo-contenedor {
+  width: 100%;
+  height: 750px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.historia-linea-de-tiempo-luna {
+  position: absolute;
+  z-index: 1;
+}
+
+.historia-linea-de-tiempo-contenido {
+  position: absolute;
+  top: 38%;
+  display: flex;
+  text-align: center;
+  z-index: 2;
+  flex-direction: column;
+}
+.historia-linea-de-tiempo-contenido h2 {
+  font-size: 56px;
+  margin: 5px;
+}
+
+.historia-linea-de-tiempo-contenido p {
+  font-size: 24px;
+  width: 250px;
+  margin-block-start: 5px;
+}
+
+.historia-linea-de-tiempo-fechas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.historia-linea-de-tiempo-fechas button {
+  position: absolute;
+  background: none;
+  border: none;
+  font-size: 28px;
+  font-family: "Inter", sans-serif;
+  color: #0F214A;
+  cursor: pointer;
+  z-index: 3;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.historia-linea-de-tiempo-fechas button.activo {
+  color: rgb(200, 50, 40);
+  transform: scale(1.2);
+}
+
+.historia-linea-de-tiempo-fechas button:hover {
+  color: rgb(200, 50, 40);
+  transform: scale(1.2);
+}
+
+/*AÑOS ALREDEDOR DE LA LINEA DE TIEMPO*/
+
+.historia-linea-de-tiempo-fechas button[data-año="1962"] {
+  left: 18%;
+  top: 68%;
+  visibility: hidden;
+}
+
+.historia-linea-de-tiempo-fechas button[data-año="1963"] {
+  left: 13%;
+  top: 48%;
+}
+
+.historia-linea-de-tiempo-fechas button[data-año="1972"] {
+  left: 17%;
+  top: 27%;
+}
+
+.historia-linea-de-tiempo-fechas button[data-año="1974"] {
+  left: 33%;
+  top: 12%;
+}
+
+.historia-linea-de-tiempo-fechas button[data-año="2026"] {
+  right: 18%;
+  top: 68%;
+}
+
+.historia-linea-de-tiempo-fechas button[data-año="2022"] {
+  right: 13%;
+  top: 48%;
+}
+
+.historia-linea-de-tiempo-fechas button[data-año="2018"] {
+  right: 17%;
+  top: 27%;
+}
+
+.historia-linea-de-tiempo-fechas button[data-año="2012"] {
+  right: 33%;
+  top: 12%;
+}
+
+/*COHETE POSICIONES*/
+
+.historia-linea-de-tiempo-cohete {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  z-index: 2;
+  transition: top 0.8s ease, left 0.8s ease, right 0.8s ease;
+  transform: rotate(0deg);
+}
+
+.historia-linea-de-tiempo-cohete.posicion-1962 {
+  left: 18%;
+  top: 66%;
+}
+
+.historia-linea-de-tiempo-cohete.posicion-1963 {
+  left: 13%;
+  top: 48%;
+}
+
+.historia-linea-de-tiempo-cohete.posicion-1972 {
+  left: 17%;
+  top: 27%;
+}
+
+.historia-linea-de-tiempo-cohete.posicion-1974 {
+  left: 33%;
+  top: 12%;
+}
+
+.historia-linea-de-tiempo-cohete.posicion-2012 {
+  left: 67%;
+  top: 12%;
+}
+
+.historia-linea-de-tiempo-cohete.posicion-2018 {
+  left: 83%;
+  top: 27%;
+}
+
+.historia-linea-de-tiempo-cohete.posicion-2022 {
+  left: 87%;
+  top: 48%;
+}
+
+.historia-linea-de-tiempo-cohete.posicion-2026 {
+  left: 82%;
+  top: 66%;
+}
+
+
+
 
 
 

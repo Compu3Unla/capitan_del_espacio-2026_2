@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capitán del Espacio</title>
-    <link rel="stylesheet" href="estilos.css"> <!-- Reemplazá con la ruta de tu CSS si es diferente -->
+    <link rel="stylesheet" href="estilos.css"> 
 </head>
 <body>
 
-    <!-- HEADER (Ya provisto por tu compañera / integrado) -->
+    <!-- HEADER -->
     <header class="encabezado">
         <div class="encabezado-interior">
             <a href="index.html" class="encabezado-logo">
@@ -16,10 +16,10 @@
             </a>
             <nav class="navegacion">
                 <ul class="navegacion-lista">
-                    <li><a href="#" class="navegacion-enlace navegacion-enlace-productos">Productos</a></li>
-                    <li><a href="#" class="navegacion-enlace navegacion-enlace-historia">Historia</a></li>
-                    <li><a href="#" class="navegacion-enlace navegacion-enlace-distribucion">Distribución</a></li>
-                    <li><a href="#" class="navegacion-enlace navegacion-enlace-tienda">Tienda</a></li>
+                    <li><a href="productos.html" class="navegacion-enlace navegacion-enlace-productos">Productos</a></li>
+                    <li><a href="historia.html" class="navegacion-enlace navegacion-enlace-historia">Historia</a></li>
+                    <li><a href="distribucion.html" class="navegacion-enlace navegacion-enlace-distribucion">Distribución</a></li>
+                    <li><a href="tienda.html" class="navegacion-enlace navegacion-enlace-tienda">Tienda</a></li>
                 </ul>
             </nav>
             <div class="buscador">
@@ -35,7 +35,7 @@
 
     <!-- MAIN (Diseño del Index basado en tus capturas) -->
     <main>
-        <!-- SECCIÓN HERO / HISTORIA (Sin recuadro) -->
+        <!-- SECCIÓN HERO / HISTORIA -->
     <section class="hero-historia">
         <div class="hero-imagen-contenedor">
             <video src="images/index/capitannuevo.mp4" autoplay muted loop playsinline class="hero-imagen"></video>
@@ -47,61 +47,84 @@
                 <h2>DESDE 1962 ELABORANDO EL SABOR QUE NOS UNE</h2>
                 <img src="images/svg/estrella.svg" alt="" aria-hidden="true">
             </div>
-            <a href="#" class="btn-resultado">Conocenos</a>
+            <a href="historia.html" class="btn-resultado">Conocenos</a>
         </div>
     </section>
 
-    <!-- SECCIÓN NUESTROS CLÁSICOS (Con el recuadro contenedor) -->
+    <!-- SECCIÓN NUESTROS CLÁSICOS -->
     <section class="nuestros-clasicos">
         <div class="clasicos-contenido-tarjeta">
             <h2>NUESTROS CLÁSICOS</h2>
             <div class="alfajores-contenedor">
                 <div class="alfajor-item">
-                    <img src="images/alfajor-simple.png" alt="Alfajor simple Capitán del Espacio">
+                    <img src="images/productos/sabores_alfajor_negro.png" alt="Alfajor simple Capitán del Espacio">
                 </div>
                 <div class="alfajor-item">
-                    <img src="images/alfajor-de-dulce-de-leche.png" alt="Alfajor de dulce de leche Capitán del Espacio">
+                    <img src="images/productos/saboresalfajorblanco.png" alt="Alfajor de dulce de leche Capitán del Espacio">
                 </div>
                 <div class="alfajor-item">
-                    <img src="images/alfajor-de-tapa-verde.png" alt="Alfajor de tartera / tapa verde Capitán del Espacio">
+                    <img src="images/productos/sabores_alfajor_fruta.png" alt="Alfajor de tartera / tapa verde Capitán del Espacio">
                 </div>
             </div>
-            <button class="btn-resultado">Alfajores</button>
+            <a href="productos.html" class="btn-resultado">Alfajores</a>
         </div>
     </section>
 
-        <!-- SECCIÓN CUESTIONARIO / TIRA DE TEXTO -->
-        <section class="cuestionario">
-            <div class="tira-titulo">
-                <div class="marquee">
-                    <div class="fila">
-                        <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
-                        <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
-                        <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
-                        <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
-                        <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
-                    </div>
+       <!-- SECCIÓN CUESTIONARIO -->
+    <section class="cuestionario">
+        <div class="tira-titulo">
+            <div class="marquee">
+                <div class="fila">
+                    <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
+                    <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
+                    <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
+                    <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
+                    <h2>¿QUÉ CAPITÁN DEL ESPACIO SOS?</h2>
                 </div>
             </div>
+        </div>
 
-            <div class="cuestionario-grid">
-                <div class="introduccion">
-                    <h4>Descubrí cuál de nuestros clásicos representa mejor tu personalidad y tu forma de vivir los momentos dulces.</h4>
-                    <p>Seleccioná una sola respuesta de cada pregunta y dale click al botón para conocer el resultado.</p>
-                    <button class="btn-resultado">Resultados</button>
-                </div>
+        <div class="cuestionario-grid">
+            <div class="introduccion">
+                <h4>Descubrí cuál de nuestros clásicos representa mejor tu personalidad y tu forma de vivir los momentos dulces.</h4>
+                <p>Seleccioná una sola respuesta de cada pregunta y dale click al botón para conocer el resultado.</p>
+                <a href="#" class="btn-resultado">Resultados</a>
+            </div>
 
-                <div class="cuestionario-card">
-                    <p>¿Cómo reaccionas si alguien te pide que le convides de tu alfajor Capitán del Espacio?</p>
-                    <ul>
-                        <li><span class="estrella-viñeta">★</span> Le digo que el Capitán no se comparte, es ley universal.</li>
-                        <li><span class="estrella-viñeta">★</span> Parto la mitad con dolor en el alma pero con bondad.</li>
-                        <li><span class="estrella-viñeta">★</span> Le compro otro para evitar conflictos.</li>
+            <div class="cuestionario-card">
+                <form class="quiz-form">
+                    <p class="pregunta-texto">¿Cómo reaccionás si alguien te pide que le convides de tu alfajor Capitán del Espacio?</p>
+                    <ul class="quiz-opciones">
+                        <li>
+                            <label class="opcion-label">
+                                <input type="radio" name="pregunta1" value="1" class="radio-oculto">
+                                <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
+                                <span>Le digo que el Capitán no se comparte, es ley universal.</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="opcion-label">
+                                <input type="radio" name="pregunta1" value="2" class="radio-oculto">
+                                <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
+                                <span>Parto la mitad con dolor en el alma pero con bondad.</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="opcion-label">
+                                <input type="radio" name="pregunta1" value="3" class="radio-oculto">
+                                <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
+                                <span>Le compro otro para evitar conflictos.</span>
+                            </label>
+                        </li>
                     </ul>
-                    <a href="#" class="enlace-flecha"> &gt;</a>
-                </div>
+                    <div class="quiz-footer">
+                        <span class="quiz-paginacion">1/3</span>
+                        <a href="#" class="enlace-flecha">&gt;</a>
+                    </div>
+                </form>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- SECCIÓN PUBLICIDAD / COMENTARIOS -->
         <section class="publicidad">
@@ -142,7 +165,7 @@
         </section>
     </main>
 
-    <!-- FOOTER (Ya provisto por tu compañera / integrado) -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-contenido">
             <div class="footer-info">
@@ -160,7 +183,7 @@
             </div>
             
             <div class="footer-suscripcion">
-                <img src="images/svg/alfajor-footer.svg" alt="" class="footer-alfajor" aria-hidden="true">
+                <img src="images/svg/ilus-alfajor-footer.svg" alt="" class="footer-alfajor" aria-hidden="true">
                 <div class="footer-comunidad">
                     <span class="footer-comunidad-titulo">Sumate a nuestra comunidad</span>
                     <span class="footer-comunidad-texto"> Suscribite y recibí un 10% off en tu próxima compra.</span>

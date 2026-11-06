@@ -2040,6 +2040,20 @@ body:has(.inicio-sesion[open]) {
   flex-direction: column;
   justify-content: flex-start;
   margin-top: 100px;
+  gap: 45px;
+}
+
+.registro-grupo {
+  display: flex;
+  flex-direction: column;
+}
+
+.registro-etiqueta {
+  margin: 0 0 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: #0F214A;
 }
 
 .registro-entrada {

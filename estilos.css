@@ -2540,7 +2540,7 @@ body:has(.inicio-sesion[open]) {
   }
 
 
- /*----- REGISTRO -----*/
+ /*----- FOOTER -----*/
   .seccion-registro {
     padding: 40px var(--margen-lateral) 0;
   }
@@ -2649,7 +2649,6 @@ body:has(.inicio-sesion[open]) {
     left: 50%;
   }
 
-}
 
 @media (prefers-reduced-motion: reduce) {
   * {

@@ -97,7 +97,24 @@
                 <img src="images/svg/ilus-cohete.svg" alt="cohete" width="600" height="925">
             </section>
             <section class="historia-linea-de-tiempo">
-                
+                <div class="historia-linea-de-tiempo-contenedor">
+                    <img class="historia-linea-de-tiempo-luna" src="images/svg/luna.svg" alt="luna" width="450" height="411">
+                    <div class="historia-linea-de-tiempo-contenido">
+                        <h2 class="historia-linea-de-tiempo-año-entrada">1962</h2>
+                        <p class="historia-linea-de-tiempo-descripcion-entrada">Se funda la fábrica bajo el nombre "Capitán del Espacio" en Ezpeleta.</p>
+                    </div>
+                    <div class="historia-linea-de-tiempo-fechas">
+                        <button data-año="1962">1962</button>
+                        <button data-año="1963">1963</button>
+                        <button data-año="1972">1972</button>
+                        <button data-año="1974">1974</button>
+                        <button data-año="2012">2012</button>
+                        <button data-año="2018">2018</button>
+                        <button data-año="2022">2022</button>
+                        <button data-año="2026">2026</button>
+                    </div>
+                    <img class="historia-linea-de-tiempo-cohete posicion-1962" src="images/svg/cohete-historia.svg" alt="cohete">
+                </div>
             </section>
 
         </main>
@@ -170,5 +187,59 @@
             });
 
             setInterval(cambiarBanner, 3000);
+
+
+            const historiaDatos = {
+                "1962": {
+                    descripcion: 'Se funda la fábrica bajo el nombre "Capitán del Espacio" en Ezpeleta.'
+                },
+                "1963": {
+                    descripcion: 'La empresa se muda a Bernal Oeste para seguir creciendo.'
+                },
+                "1972": {
+                    descripcion: 'La fábrica se muda a Quilmes, que se convertiría en la ubicación permanente.'
+                },
+                "1974": {
+                    descripcion: 'Arturo Amado se retira y Ángel Lineo de Pascalis queda al frente de la empresa.'
+                },
+                "2012": {
+                    descripcion: 'Fallece Ángel, pero su legado continúa en la empresa.'
+                },
+                "2018": {
+                    descripcion: 'Los fanáticos de la marca comienzan a celebrar el Día del Capitán cada 1° de agosto.'
+                },
+                "2022": {
+                    descripcion: 'Capitán del Espacio cumple 60 años de historia.'
+                },
+                "2026": {
+                    descripcion: 'A 64 años de sus inicios, la marca sigue conquistando los corazones de Zona Sur.'
+                }
+            };
+
+            const historiaAño = document.querySelector(".historia-linea-de-tiempo-año-entrada");
+            const historiaDespripcion = document.querySelector(".historia-linea-de-tiempo-descripcion-entrada");
+            const historiaCohete = document.querySelector(".historia-linea-de-tiempo-cohete");
+            const historiaBotones = document.querySelectorAll(".historia-linea-de-tiempo-fechas button");
+
+            historiaBotones.forEach(boton => {
+                boton.addEventListener("click", () => {
+                    const añoSeleccionado = boton.getAttribute("data-año");
+
+                    historiaAño.textContent = añoSeleccionado;
+
+                    historiaDespripcion.textContent = historiaDatos[añoSeleccionado].descripcion;
+
+                    historiaCohete.className = "historia-linea-de-tiempo-cohete posicion-" + añoSeleccionado;
+
+                    historiaBotones.forEach(boton => {
+                        if (boton.getAttribute("data-año") === añoSeleccionado) {
+                            boton.style.visibility = "hidden";
+                        } else {
+                            boton.style.visibility = "visible";
+                        }
+                    });
+                });
+            });
+
         </script>
     </body>

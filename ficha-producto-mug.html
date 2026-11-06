@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Tienda | Capitán del Espacio</title>
+        <title>Jarro mug "Astronauta" | Capitán del Espacio</title>
         <link rel="stylesheet" href="estilos.css">
         <link rel="icon" type="image/x-icon" href="images/favicon-cde.ico">
     </head>
@@ -87,8 +87,8 @@
                             <h4 class="precio-mug-subtitulo">¡Un clásico del Sur en tu mesa!</h4>
 
                             <h3 class="precio-mug-precio">$32.000,00</h3>
-                            <p class="precio-mug-transferencia"><strong class="precio-mug-destacado">$28.800,00</strong> con transferencia<br>o depósito bancario.</p>
-                            <p class="precio-mug-transferencia"><strong class="precio-mug-destacado">10% de descuento</strong> pagando con<br>transferencia o depósito bancario</p>
+                            <p class="precio-mug-transferencia"><span class="precio-mug-destacado">$28.800,00</span> con transferencia<br>o depósito bancario.</p>
+                            <p class="precio-mug-transferencia"><span class="precio-mug-destacado">10% de descuento</span> pagando con<br>transferencia o depósito bancario</p>
 
                             <!-- Unidades + comprar -->
                             <div class="precio-mug-acciones">
@@ -125,7 +125,7 @@
                         </a>
                         <h4 class="tambien-producto-nombre">Cuaderno “Misión espacial”</h4>
                         <h3 class="tambien-producto-precio">$29.000,00</h3>
-                        <p class="tambien-producto-transferencia"><strong class="tambien-producto-descuento">$26.100,00</strong> con transferencia<br>o depósito bancario.</p>
+                        <p class="tambien-producto-transferencia"><span class="tambien-producto-descuento">$26.100,00</span> con transferencia<br>o depósito bancario.</p>
                         <a class="tambien-producto-boton" href="#">Comprar</a>
                     </article>
 
@@ -136,7 +136,7 @@
                         </a>
                         <h4 class="tambien-producto-nombre">Tote bag “Buen gusto”</h4>
                         <h3 class="tambien-producto-precio">$18.200,00</h3>
-                        <p class="tambien-producto-transferencia"><strong class="tambien-producto-descuento">$16.380,00</strong> con transferencia<br>o depósito bancario.</p>
+                        <p class="tambien-producto-transferencia"><span class="tambien-producto-descuento">$16.380,00</span> con transferencia<br>o depósito bancario.</p>
                         <a class="tambien-producto-boton" href="#">Comprar</a>
                     </article>
 
@@ -147,7 +147,7 @@
                         </a>
                         <h4 class="tambien-producto-nombre">Mate artesanal “Galáctico”</h4>
                         <h3 class="tambien-producto-precio">$11.500,00</h3>
-                        <p class="tambien-producto-transferencia"><strong class="tambien-producto-descuento">$10.350,00</strong> con transferencia<br>o depósito bancario.</p>
+                        <p class="tambien-producto-transferencia"><span class="tambien-producto-descuento">$10.350,00</span> con transferencia<br>o depósito bancario.</p>
                         <a class="tambien-producto-boton" href="#">Comprar</a>
                     </article>
 
@@ -158,7 +158,7 @@
                         </a>
                         <h4 class="tambien-producto-nombre">Hoodie frizado “Astro”</h4>
                         <h3 class="tambien-producto-precio">$46.700,00</h3>
-                        <p class="tambien-producto-transferencia"><strong class="tambien-producto-descuento">$40.030,00</strong> con transferencia<br>o depósito bancario.</p>
+                        <p class="tambien-producto-transferencia"><span class="tambien-producto-descuento">$40.030,00</span> con transferencia<br>o depósito bancario.</p>
                         <a class="tambien-producto-boton" href="#">Comprar</a>
                     </article>
 
@@ -169,79 +169,12 @@
                         </a>
                         <h4 class="tambien-producto-nombre">Taza cerámica “Capitán”</h4>
                         <h3 class="tambien-producto-precio">$19.999,00</h3>
-                        <p class="tambien-producto-transferencia"><strong class="tambien-producto-descuento">$16.380,00</strong> con transferencia<br>o depósito bancario.</p>
+                        <p class="tambien-producto-transferencia"><span class="tambien-producto-descuento">$16.380,00</span> con transferencia<br>o depósito bancario.</p>
                         <a class="tambien-producto-boton" href="#">Comprar</a>
                     </article>
 
                 </div>
             </section>
-
-<script>
-  // ---------- Carrusel ----------
-  const pista = document.querySelector('.carrusel-mug-pista');
-  const diapositivas = pista.children;
-  const video = pista.querySelector('.carrusel-mug-video');
-  let actual = 0;
-
-  function actualizarVideo() {
-    if (actual === 0) {
-      video.play().catch(function () {});
-    } else {
-      video.pause();
-    }
-  }
-
-  function irA(indice) {
-    actual = (indice + diapositivas.length) % diapositivas.length;
-    pista.scrollTo({ left: actual * pista.clientWidth, behavior: 'smooth' });
-    actualizarVideo();
-  }
-
-  document.querySelector('.carrusel-mug-flecha-anterior').addEventListener('click', function () {
-    irA(actual - 1);
-  });
-
-  document.querySelector('.carrusel-mug-flecha-siguiente').addEventListener('click', function () {
-    irA(actual + 1);
-  });
-
-
-  video.addEventListener('click', function () {
-    if (video.paused) {
-      video.play();
-    } else {
-      video.pause();
-    }
-  });
-
-  let esperaScroll;
-  pista.addEventListener('scroll', function () {
-    clearTimeout(esperaScroll);
-    esperaScroll = setTimeout(function () {
-      actual = Math.round(pista.scrollLeft / pista.clientWidth);
-      actualizarVideo();
-    }, 100);
-  });
-
-  window.addEventListener('resize', function () {
-    pista.scrollTo({ left: actual * pista.clientWidth, behavior: 'auto' });
-  });
-
-  const cantidad = document.querySelector('.precio-mug-cantidad');
-  let unidades = 0;
-
-  document.querySelector('.precio-mug-menos').addEventListener('click', function () {
-    if (unidades > 0) {
-      unidades = unidades - 1;
-      cantidad.textContent = unidades;
-    }
-  });
-
-  document.querySelector('.precio-mug-mas').addEventListener('click', function () {
-    unidades = unidades + 1;
-    cantidad.textContent = unidades;
-  });
-</script>
         </main>
 
         <footer class="footer">
@@ -288,6 +221,142 @@
                 <a class="footer-legales-enlace" href="#">Todos los derechos reservados.</a>
             </div>
         </footer>
+
+        <!-- Pop-up de inicio de sesión / pegar al final del body
+         esta parte es mucho muy importante -->
+        <dialog class="inicio-sesion" id="inicio-sesion" aria-labelledby="inicio-sesion-titulo">
+
+            <img class="inicio-sesion-imagen" src="images/inicio-sesion/png/gorra-close-up.png" alt="" width="660" height="960">
+
+            <button class="inicio-sesion-cerrar" type="button" aria-label="Cerrar"></button>
+
+            <div class="inicio-sesion-contenido">
+                <div class="inicio-sesion-formulario">
+
+                    <div class="inicio-sesion-superior">
+                        <h2 class="inicio-sesion-titulo" id="inicio-sesion-titulo">Iniciar sesión</h2>
+ 
+                        <a class="inicio-sesion-google" href="#">
+                            <img class="inicio-sesion-google-logo" src="images/svg/google.svg" alt="" width="21.5" height="21.5">
+                            <h3 class="inicio-sesion-google-texto">Continuar con Google</h3>
+                        </a>
+ 
+                    <hr class="inicio-sesion-linea">
+                </div>
+
+                    <h2 class="inicio-sesion-titulo">Ingresar de otra forma:</h2>
+
+                    <form class="inicio-sesion-campos" action="#">
+                        <div class="inicio-sesion-grupo">
+                            <h3 class="inicio-sesion-etiqueta"><label for="inicio-sesion-email">Email:</label></h3>
+                            <input class="inicio-sesion-entrada inicio-sesion-entrada-email" id="inicio-sesion-email" type="email" name="email" placeholder="ejemplo@mail.com.ar" autocomplete="email">
+                        </div>
+
+                        <div class="inicio-sesion-grupo">
+                            <h3 class="inicio-sesion-etiqueta"><label for="inicio-sesion-clave">Contraseña:</label></h3>
+                            <input class="inicio-sesion-entrada inicio-sesion-entrada-clave" id="inicio-sesion-clave" type="password" name="clave" placeholder="Ingresá tu contraseña" autocomplete="current-password">
+                        </div>
+
+                        <a class="inicio-sesion-olvido" href="#">¿Olvidaste tu contraseña?</a>
+
+                        <a class="inicio-sesion-boton" href="#">Iniciar sesión</a>
+                    </form>
+
+                    <h4 class="inicio-sesion-cuenta">¿No tenés cuenta aún? <a class="inicio-sesion-crear" href="registro.html">Crear cuenta</a></h4>
+
+                </div>
+            </div>
+        </dialog>
+
+        <!-- Carrusel -->
+    <script>
+          const pista = document.querySelector('.carrusel-mug-pista');
+          const diapositivas = pista.children;
+          const video = pista.querySelector('.carrusel-mug-video');
+          let actual = 0;
+ 
+          function actualizarVideo() {
+            if (actual === 0) {
+              video.play().catch(function () {});
+            } else {
+              video.pause();
+            }
+          }
+ 
+          function irA(indice) {
+            actual = (indice + diapositivas.length) % diapositivas.length;
+            pista.scrollTo({ left: actual * pista.clientWidth, behavior: 'smooth' });
+            actualizarVideo();
+          }
+ 
+          document.querySelector('.carrusel-mug-flecha-anterior').addEventListener('click', function () {
+            irA(actual - 1);
+          });
+ 
+          document.querySelector('.carrusel-mug-flecha-siguiente').addEventListener('click', function () {
+            irA(actual + 1);
+          });
+ 
+          video.addEventListener('click', function () {
+            if (video.paused) {
+              video.play();
+            } else {
+              video.pause();
+            }
+          });
+ 
+          let esperaScroll;
+          pista.addEventListener('scroll', function () {
+            clearTimeout(esperaScroll);
+            esperaScroll = setTimeout(function () {
+              actual = Math.round(pista.scrollLeft / pista.clientWidth);
+              actualizarVideo();
+            }, 100);
+          });
+ 
+          window.addEventListener('resize', function () {
+            pista.scrollTo({ left: actual * pista.clientWidth, behavior: 'auto' });
+          });
+ 
+          // ---------- Unidades ----------
+          const cantidad = document.querySelector('.precio-mug-cantidad');
+          let unidades = 0;
+ 
+          document.querySelector('.precio-mug-menos').addEventListener('click', function () {
+            if (unidades > 0) {
+              unidades = unidades - 1;
+              cantidad.textContent = unidades;
+            }
+          });
+ 
+          document.querySelector('.precio-mug-mas').addEventListener('click', function () {
+            unidades = unidades + 1;
+            cantidad.textContent = unidades;
+          });
+    </script>
+ 
+        <!-- pop-up de inicio de sesión (va igual en todas las páginas)
+             esta parte es mucho muy importante -->
+    <script>
+          const ventanaInicioSesion = document.getElementById('inicio-sesion');
+          const botonRegistro = document.querySelector('.acciones-boton-registro');
+          const botonCerrar = ventanaInicioSesion.querySelector('.inicio-sesion-cerrar');
+ 
+          botonRegistro.addEventListener('click', function (evento) {
+            evento.preventDefault();
+            ventanaInicioSesion.showModal();
+          });
+ 
+          botonCerrar.addEventListener('click', function () {
+            ventanaInicioSesion.close();
+          });
+ 
+          ventanaInicioSesion.addEventListener('click', function (evento) {
+            if (evento.target === ventanaInicioSesion) {
+              ventanaInicioSesion.close();
+            }
+          });
+    </script>
 
     </body>
 </html>

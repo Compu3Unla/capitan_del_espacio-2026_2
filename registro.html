@@ -28,9 +28,9 @@
                     <nav class="navegacion" aria-label="Principal">
                         <ul class="navegacion-lista">
                         <!-- acá después hay que cambiar el href por los archivos de productos, historia y distribución -->
-                            <li><a class="navegacion-enlace navegacion-enlace-productos" href="#">Productos</a></li>
-                            <li><a class="navegacion-enlace navegacion-enlace-historia" href="#">Historia</a></li>
-                            <li><a class="navegacion-enlace navegacion-enlace-distribucion" href="#">Distribución</a></li>
+                            <li><a class="navegacion-enlace navegacion-enlace-productos" href="productos.html">Productos</a></li>
+                            <li><a class="navegacion-enlace navegacion-enlace-historia" href="historia.html">Historia</a></li>
+                            <li><a class="navegacion-enlace navegacion-enlace-distribucion" href="distribucion.html">Distribución</a></li>
                             <li><a class="navegacion-enlace navegacion-enlace-tienda" href="tienda.html">Tienda</a></li>
                         </ul>
                     </nav>
@@ -53,8 +53,70 @@
             </div>
         </header>
 
-        <main>
+        <main>  
+            <section class="seccion-registro">
+                <img class="seccion-registro-ilustracion" src="images/svg/ilus-cohete.svg" alt="" width="789" height="879">
 
+                <p class="seccion-registro-ruta">Inicio> Mi cuenta> Crear cuenta</p>
+                
+                <header class="seccion-registro-cabecera">
+                    <h2 class="seccion-registro-titulo">Crear cuenta</h2>
+                    <h4 class="seccion-registro-subtitulo">¡Comprá más rápido y lleva el control de tus pedidos!</h4>
+                </header>
+
+                <div class="registro-caja">
+                    <form class="registro-formulario" action="#" method="post">
+                        
+                        <div class="registro-grupo">
+                            <h3 class="registro-etiqueta"><label for="nombre">Nombre y apellido</label></h3>
+                            <input class="registro-entrada" id="nombre" type="text" name="nombre" placeholder="ej.: María Pérez" autocomplete="name">
+                        </div>
+
+                        <div class="registro-grupo">
+                            <h3 class="registro-etiqueta"><label for="email">Email</label></h3>
+                            <input class="registro-entrada" id="email" type="email" name="email" placeholder="ejemplo@mail.com.ar" autocomplete="email">
+                        </div>
+
+                        <div class="registro-grupo">
+                            <h3 class="registro-etiqueta"><label for="telefono">Teléfono</label></h3>
+                            <input class="registro-entrada" id="telefono" type="tel" name="telefono" placeholder="ej.: 1112345678" autocomplete="tel">
+                        </div>
+
+                        <div class="registro-doble">
+                            <div class="registro-grupo">
+                                <h3 class="registro-etiqueta"><label for="provincia">Provincia</label></h3>
+                                <select class="registro-entrada registro-select" id="provincia" name="provincia">
+                                    <option value="" disabled selected>Seleccioná</option>
+                                    <option value="buenos-aires">Buenos Aires</option>
+                                    <option value="caba">Capital Federal</option>
+                                    <option value="cordoba">Córdoba</option>
+                                    <option value="santa-fe">Santa Fe</option>
+                                </select>
+                            </div>
+
+                            <div class="registro-grupo">
+                                <h3 class="registro-etiqueta"><label for="ciudad">Ciudad</label></h3>
+                                <input class="registro-entrada" id="ciudad" type="text" name="ciudad" placeholder="Tu ciudad">
+                            </div>
+                        </div>
+
+                        <div class="registro-grupo">
+                            <h3 class="registro-etiqueta"><label for="contrasena">Contraseña</label></h3>
+                            <input class="registro-entrada" id="contrasena" type="password" name="contrasena" placeholder="Mínimo 8 caracteres" autocomplete="new-password">
+                        </div>
+
+                        <div class="registro-grupo">
+                            <h3 class="registro-etiqueta"><label for="repetir-contrasena">Repetir contraseña</label></h3>
+                            <input class="registro-entrada" id="repetir-contrasena" type="password" name="repetir-contrasena" placeholder="Mínimo 8 caracteres" autocomplete="new-password">
+                        </div>
+
+                        <button class="registro-boton">Crear cuenta</button>
+
+                        <h4 class="registro-iniciar">¿Ya tenés cuenta? <a class="registro-enlace-iniciar" href="#">Iniciar sesión</a></h4>
+
+                    </form>
+                </div>
+            </section>
         </main>
 
         <footer class="footer">
@@ -149,28 +211,95 @@
             </div>
         </dialog>
 
-<!-- esto es para que el pop-up de inicio de sesión funcione
- esta parte es mucho muy importante -->
-<script>
-  const ventanaInicioSesion = document.getElementById('inicio-sesion');
-  const botonRegistro = document.querySelector('.acciones-boton-registro');
-  const botonCerrar = ventanaInicioSesion.querySelector('.inicio-sesion-cerrar');
-
-  botonRegistro.addEventListener('click', function (evento) {
-    evento.preventDefault();
-    ventanaInicioSesion.showModal();
-  });
-
-  botonCerrar.addEventListener('click', function () {
-    ventanaInicioSesion.close();
-  });
-
-  ventanaInicioSesion.addEventListener('click', function (evento) {
-    if (evento.target === ventanaInicioSesion) {
-      ventanaInicioSesion.close();
-    }
-  });
-</script>
+        <!-- Carrusel -->
+    <script>
+          const pista = document.querySelector('.carrusel-mug-pista');
+          const diapositivas = pista.children;
+          const video = pista.querySelector('.carrusel-mug-video');
+          let actual = 0;
+ 
+          function actualizarVideo() {
+            if (actual === 0) {
+              video.play().catch(function () {});
+            } else {
+              video.pause();
+            }
+          }
+ 
+          function irA(indice) {
+            actual = (indice + diapositivas.length) % diapositivas.length;
+            pista.scrollTo({ left: actual * pista.clientWidth, behavior: 'smooth' });
+            actualizarVideo();
+          }
+ 
+          document.querySelector('.carrusel-mug-flecha-anterior').addEventListener('click', function () {
+            irA(actual - 1);
+          });
+ 
+          document.querySelector('.carrusel-mug-flecha-siguiente').addEventListener('click', function () {
+            irA(actual + 1);
+          });
+ 
+          video.addEventListener('click', function () {
+            if (video.paused) {
+              video.play();
+            } else {
+              video.pause();
+            }
+          });
+ 
+          let esperaScroll;
+          pista.addEventListener('scroll', function () {
+            clearTimeout(esperaScroll);
+            esperaScroll = setTimeout(function () {
+              actual = Math.round(pista.scrollLeft / pista.clientWidth);
+              actualizarVideo();
+            }, 100);
+          });
+ 
+          window.addEventListener('resize', function () {
+            pista.scrollTo({ left: actual * pista.clientWidth, behavior: 'auto' });
+          });
+ 
+          // ---------- Unidades ----------
+          const cantidad = document.querySelector('.precio-mug-cantidad');
+          let unidades = 0;
+ 
+          document.querySelector('.precio-mug-menos').addEventListener('click', function () {
+            if (unidades > 0) {
+              unidades = unidades - 1;
+              cantidad.textContent = unidades;
+            }
+          });
+ 
+          document.querySelector('.precio-mug-mas').addEventListener('click', function () {
+            unidades = unidades + 1;
+            cantidad.textContent = unidades;
+          });
+    </script>
+ 
+        <!-- pop-up de inicio de sesión (va igual en todas las páginas)
+             esta parte es mucho muy importante -->
+    <script>
+          const ventanaInicioSesion = document.getElementById('inicio-sesion');
+          const botonRegistro = document.querySelector('.acciones-boton-registro');
+          const botonCerrar = ventanaInicioSesion.querySelector('.inicio-sesion-cerrar');
+ 
+          botonRegistro.addEventListener('click', function (evento) {
+            evento.preventDefault();
+            ventanaInicioSesion.showModal();
+          });
+ 
+          botonCerrar.addEventListener('click', function () {
+            ventanaInicioSesion.close();
+          });
+ 
+          ventanaInicioSesion.addEventListener('click', function (evento) {
+            if (evento.target === ventanaInicioSesion) {
+              ventanaInicioSesion.close();
+            }
+          });
+    </script>
 
     </body>
 </html>

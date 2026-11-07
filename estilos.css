@@ -1640,15 +1640,6 @@ body:has(.inicio-sesion[open]) {
   background-color: #A02820;
 }
 
-.hero-historia {
-  padding: 40px 0 20px 0;
-  margin-top: 60px;
-  background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 20%, #F2EBD9 70%);
-  text-align: center;
-  color: #0F214A;
-  width: 100%;
-}
-
 .hero-imagen-contenedor {
   width: 100vw;
   position: relative;
@@ -2468,6 +2459,16 @@ body:has(.inicio-sesion[open]) {
 .historia-linea-de-tiempo-cohete.posicion-2018 {
   left: 83%;
   top: 27%;
+}
+
+.historia-linea-de-tiempo-cohete.posicion-2022 {
+  left: 87%;
+  top: 48%;
+}
+
+.historia-linea-de-tiempo-cohete.posicion-2026 {
+  left: 82%;
+  top: 68%;
 }
 
 

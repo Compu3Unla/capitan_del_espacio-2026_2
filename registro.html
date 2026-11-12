@@ -87,10 +87,30 @@
                                 <h3 class="registro-etiqueta"><label for="provincia">Provincia</label></h3>
                                 <select class="registro-entrada registro-select" id="provincia" name="provincia">
                                     <option value="" disabled selected>Seleccioná</option>
-                                    <option value="buenos-aires">Buenos Aires</option>
                                     <option value="caba">Capital Federal</option>
+                                    <option value="buenos-aires">Buenos Aires</option>
+                                    <option value="catamarca">Catamarca</option>
+                                    <option value="chaco">Chaco</option>
+                                    <option value="chubut">Chubut</option>
                                     <option value="cordoba">Córdoba</option>
+                                    <option value="corrientes">Corrientes</option>
+                                    <option value="entre-rios">Entre Ríos</option>
+                                    <option value="formosa">Formosa</option>
+                                    <option value="jujuy">Jujuy</option>
+                                    <option value="la-pampa">La Pampa</option>
+                                    <option value="la-rioja">La Rioja</option>
+                                    <option value="mendoza">Mendoza</option>
+                                    <option value="misiones">Misiones</option>
+                                    <option value="neuquen">Neuquén</option>
+                                    <option value="rio-negro">Río Negro</option>
+                                    <option value="salta">Salta</option>
+                                    <option value="san-juan">San Juan</option>
+                                    <option value="san-luis">San Luis</option>
+                                    <option value="santa-cruz">Santa Cruz</option>
                                     <option value="santa-fe">Santa Fe</option>
+                                    <option value="santiago-del-estero">Santiago del Estero</option>
+                                    <option value="tierra-del-fuego">Tierra del Fuego</option>
+                                    <option value="tucuman">Tucumán</option>
                                 </select>
                             </div>
 
@@ -165,8 +185,7 @@
         </footer>
 
         
-        <!-- Pop-up de inicio de sesión / pegar al final del body
-         esta parte es mucho muy importante -->
+        <!-- Pop-up de inicio de sesión -->
         <dialog class="inicio-sesion" id="inicio-sesion" aria-labelledby="inicio-sesion-titulo">
 
             <img class="inicio-sesion-imagen" src="images/inicio-sesion/png/gorra-close-up.png" alt="" width="660" height="960">
@@ -211,7 +230,11 @@
             </div>
         </dialog>
 
-        <!-- Carrusel -->
+
+
+
+<!----- JAVASCRIPT ----->
+    <!-- Carrusel -->
     <script>
           const pista = document.querySelector('.carrusel-mug-pista');
           const diapositivas = pista.children;
@@ -278,8 +301,7 @@
           });
     </script>
  
-        <!-- pop-up de inicio de sesión (va igual en todas las páginas)
-             esta parte es mucho muy importante -->
+    <!-- pop-up de inicio de sesión -->
     <script>
           const ventanaInicioSesion = document.getElementById('inicio-sesion');
           const botonRegistro = document.querySelector('.acciones-boton-registro');

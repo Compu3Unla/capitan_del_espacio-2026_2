@@ -222,8 +222,43 @@
             </div>
         </footer>
 
-        <!-- Pop-up de inicio de sesión / pegar al final del body
-         esta parte es mucho muy importante -->
+        <!-- carrito -->
+        <div class="carrito-fondo" data-carrito-cerrar></div> <!-- CORREGIR ESTO -->
+
+            <aside class="carrito" id="carrito" role="dialog" aria-modal="true" aria-labelledby="carrito-titulo" aria-hidden="true">
+                <button class="carrito-cerrar" type="button" aria-label="Cerrar carrito" data-carrito-cerrar></button>
+
+                <h2 class="carrito-titulo" id="carrito-titulo">Mi carrito</h2>
+
+                <section class="carrito-producto">
+                    <img class="carrito-producto-foto" src="images/tienda/png/mug.png" alt="Jarro mug “Astronauta”" width="210" height="210">
+
+                    <div class="carrito-producto-info">
+                        <h3 class="carrito-producto-nombre">Jarro mug “Astronauta”</h3>
+
+                        <div class="carrito-unidades" aria-label="Cantidad">
+                            <button class="precio-mug-menos" type="button" id="carrito-menos" aria-label="Disminuir cantidad"></button>
+                            <span class="precio-mug-cantidad" id="carrito-cantidad">0</span>
+                            <button class="precio-mug-mas" type="button" id="carrito-mas" aria-label="Aumentar cantidad"></button>
+                        </div>
+
+                        <h3 class="carrito-producto-precio">$32.000,00</h3>
+                        <h4 class="carrito-producto-transferencia"><span class="carrito-producto-descuento">$28.800,00</span> con transferencia<br>o depósito bancario.</h4>
+                    </div>
+                </section>
+
+                <hr class="carrito-linea">
+
+                <section class="carrito-pago">
+                    <h3 class="carrito-total"><span>TOTAL:</span><span id="carrito-total">0</span></h3>
+                    <p class="carrito-nota">Nota: El precio con descuento por pago con transferencia o depósito bancario se recalculará automáticamente al elegir el modo de pago.</p>
+                    <a class="carrito-boton" href="#">Iniciar compra</a>
+                </section>
+            </aside>
+
+
+
+        <!-- Pop-up de inicio de sesión -->
         <dialog class="inicio-sesion" id="inicio-sesion" aria-labelledby="inicio-sesion-titulo">
 
             <img class="inicio-sesion-imagen" src="images/inicio-sesion/png/gorra-close-up.png" alt="" width="660" height="960">
@@ -268,7 +303,10 @@
             </div>
         </dialog>
 
-        <!-- Carrusel -->
+
+
+<!----- JAVASCRIPT ----->
+        <!-- carrusel -->
     <script>
           const pista = document.querySelector('.carrusel-mug-pista');
           const diapositivas = pista.children;
@@ -335,8 +373,7 @@
           });
     </script>
  
-        <!-- pop-up de inicio de sesión (va igual en todas las páginas)
-             esta parte es mucho muy importante -->
+        <!-- pop-up de inicio de sesión -->
     <script>
           const ventanaInicioSesion = document.getElementById('inicio-sesion');
           const botonRegistro = document.querySelector('.acciones-boton-registro');
@@ -356,6 +393,75 @@
               ventanaInicioSesion.close();
             }
           });
+    </script>
+
+    <!-- carrito -->
+    <script>
+      (function () {
+        const carrito = document.getElementById('carrito');
+        const fondoCarrito = document.querySelector('.carrito-fondo');
+        const botonAbrirCarrito = document.querySelector('.acciones-boton-carrito');
+        const botonCerrarCarrito = carrito.querySelector('.carrito-cerrar');
+        const botonMenosCarrito = document.getElementById('carrito-menos');
+        const botonMasCarrito = document.getElementById('carrito-mas');
+        const cantidadCarrito = document.getElementById('carrito-cantidad');
+        const totalCarrito = document.getElementById('carrito-total');
+        const PRECIO = 32000;
+        let unidadesCarrito = 0;
+
+        function formatearPrecio(valor) {
+          if (valor === 0) return '0';
+          return '$' + valor.toLocaleString('es-AR', { minimumFractionDigits: 2 });
+        }
+
+        function actualizarCarrito() {
+          cantidadCarrito.textContent = unidadesCarrito;
+          totalCarrito.textContent = formatearPrecio(unidadesCarrito * PRECIO);
+          botonMenosCarrito.disabled = unidadesCarrito === 0;
+        }
+
+        function abrirCarrito() {
+          carrito.classList.add('abierto');
+          fondoCarrito.classList.add('abierto');
+          carrito.setAttribute('aria-hidden', 'false');
+          botonCerrarCarrito.focus();
+        }
+
+        function cerrarCarrito() {
+          carrito.classList.remove('abierto');
+          fondoCarrito.classList.remove('abierto');
+          carrito.setAttribute('aria-hidden', 'true');
+          botonAbrirCarrito.focus();
+        }
+
+        botonAbrirCarrito.addEventListener('click', function (evento) {
+          evento.preventDefault();
+          abrirCarrito();
+        });
+
+        botonCerrarCarrito.addEventListener('click', cerrarCarrito);
+        fondoCarrito.addEventListener('click', cerrarCarrito);
+
+        document.addEventListener('keydown', function (evento) {
+          if (evento.key === 'Escape' && carrito.classList.contains('abierto')) {
+            cerrarCarrito();
+          }
+        });
+
+        botonMasCarrito.addEventListener('click', function () {
+          unidadesCarrito = unidadesCarrito + 1;
+          actualizarCarrito();
+        });
+
+        botonMenosCarrito.addEventListener('click', function () {
+          if (unidadesCarrito > 0) {
+            unidadesCarrito = unidadesCarrito - 1;
+            actualizarCarrito();
+          }
+        });
+
+        actualizarCarrito();
+      })();
     </script>
 
     </body>

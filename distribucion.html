@@ -23,19 +23,37 @@
                 <img src="images/svg/logo-header.svg" alt="Capitán del Espacio" width="129" height="60">
             </a>
 
-            <!-- navegación-->
+            <!-- navegación y buscador -->
             <div class="panel" id="panel">
                 <!-- Navegación -->
                 <nav class="navegacion" aria-label="Principal">
                     <ul class="navegacion-lista">
                         <!-- acá después hay que cambiar el href por los archivos de productos, historia y distribución -->
-                        <li><a class="navegacion-enlace navegacion-enlace-productos" href="productos.html">Productos</a></li>
+                        <li><a class="navegacion-enlace navegacion-enlace-productos" href="productos.html">Productos</a>
+                        </li>
                         <li><a class="navegacion-enlace navegacion-enlace-historia" href="#">Historia</a></li>
-                        <li><a class="navegacion-enlace navegacion-enlace-distribucion" href="distribucion.html">Distribución</a></li>
+                        <li><a class="navegacion-enlace navegacion-enlace-distribucion"
+                                href="distribucion.html">Distribución</a></li>
                         <li><a class="navegacion-enlace navegacion-enlace-tienda" href="tienda.html">Tienda</a></li>
                     </ul>
                 </nav>
+
+                <!-- Buscador -->
+                <div class="buscador" role="search">
+                    <label class="oculto-visual" for="campo-busqueda">Buscar en el sitio</label>
+                    <input class="buscador-campo" id="campo-busqueda" type="search" name="q" autocomplete="off">
+                    <button class="buscador-boton" type="submit" aria-label="Buscar"></button>
+                </div>
             </div>
+
+            <!-- Acciones y botones -->
+            <div class="acciones">
+                <!-- acá después hay que cambiar el href por los archivos de registro y de carrito -->
+                <a class="acciones-boton acciones-boton-registro" href="#" aria-label="Iniciar sesión"></a>
+                <a class="acciones-boton acciones-boton-carrito" href="#" aria-label="Carrito"></a>
+            </div>
+
+        </div>
     </header>
 
     <main>
@@ -43,7 +61,7 @@
             <img class="hero-distribucion-imagen" src="images/distribucion/distribución.png" alt="distribucion"
                 width="1920" height="570">
             <div class="hero-distribucion-titulos">
-                <h1 class="hero-distribucion-titulo"> El clásico del sur a tu kiosko
+                <h1 class="hero-distribucion-titulo"> El <strong class="hero-distribucion-destacado">clásico del sur</strong> a tu kiosko
                 </h1>
                 <h2 class="hero-distribucion-subtitulo">no solo usamos cohete</h2>
             </div>

@@ -1681,7 +1681,7 @@ body:has(.inicio-sesion[open]) {
 }
 
 .hero-imagen-contenedor {
-  width: 100vw;
+  width: 100%;
   position: relative;
   left: 50%;
   right: 50%;
@@ -1702,8 +1702,11 @@ body:has(.inicio-sesion[open]) {
 
 .hero-texto-libre {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-texto-libre h1 {
@@ -1712,6 +1715,8 @@ body:has(.inicio-sesion[open]) {
   font-size: 32px;
   color: #0F214A;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-texto-libre h2 {
@@ -2466,7 +2471,7 @@ body:has(.inicio-sesion[open]) {
   width: 100px;
   height: auto;
   z-index: 2;
-  transition: top 0.8s ease, left 0.8s ease, right 0.8s ease;
+  transition: top 0.8s ease, left 0.8s ease, right 0.8s ease, transform 0.8s ease;
   transform: rotate(0deg);
 }
 
@@ -2476,38 +2481,45 @@ body:has(.inicio-sesion[open]) {
 }
 
 .historia-linea-de-tiempo-cohete.posicion-1963 {
-  left: 13%;
-  top: 48%;
+  left: 12%;
+  top: 47%;
+  transform: rotate(30deg);
 }
 
 .historia-linea-de-tiempo-cohete.posicion-1972 {
-  left: 17%;
-  top: 27%;
+  left: 15%;
+  top: 24%;
+  transform: rotate(70deg);
 }
 
 .historia-linea-de-tiempo-cohete.posicion-1974 {
-  left: 33%;
-  top: 12%;
+  left: 32%;
+  top: 9%;
+  transform: rotate(110deg);
 }
 
 .historia-linea-de-tiempo-cohete.posicion-2012 {
-  left: 67%;
-  top: 12%;
+  left: 58%;
+  top: 8%;
+  transform: rotate(150deg);
 }
 
 .historia-linea-de-tiempo-cohete.posicion-2018 {
-  left: 83%;
-  top: 27%;
+  left: 75%;
+  top: 21%;
+  transform: rotate(190deg);
 }
 
 .historia-linea-de-tiempo-cohete.posicion-2022 {
-  left: 87%;
-  top: 48%;
+  left: 80%;
+  top: 43%;
+  transform: rotate(230deg);
 }
 
 .historia-linea-de-tiempo-cohete.posicion-2026 {
-  left: 82%;
-  top: 68%;
+  left: 75%;
+  top: 63%;
+  transform: rotate(260deg);
 }
 
 /* ----- CARRITO ----- */

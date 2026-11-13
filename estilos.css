@@ -1795,7 +1795,6 @@ body:has(.inicio-sesion[open]) {
   transform: translateY(-8px);
 }
 
-/* section del cuestionario-index */
 
 .cuestionario {
   background: linear-gradient(to bottom, #F2EBD9 0%, #FFFFFF 100%);

@@ -2395,8 +2395,7 @@ p.inicio-productos {
 
 /*------HISTORIA------*/
 
-.hero-historia {
-  margin-top: 120;
+.hero-nuestra-historia {
   position: relative;
   width: 100%;
   height: 100%;
@@ -3867,7 +3866,7 @@ body:has(.carrito[open]) {
 }
 
 .historia-quienes-somos {
-  margin-top: 0;
+  margin-top: 15px;
   padding-top: 0;
 }
 

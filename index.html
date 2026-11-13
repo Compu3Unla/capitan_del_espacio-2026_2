@@ -4,30 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capitán del Espacio</title>
-    <link rel="stylesheet" href="estilos.css"> 
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon-cde.ico">
 </head>
 <body>
 
     <!-- HEADER -->
     <header class="encabezado">
         <div class="encabezado-interior">
+            <input type="checkbox" id="menu-hamburguesa" class="encabezado-casilla">
+            <label for="menu-hamburguesa" class="encabezado-menu" aria-label="Menú"></label>
+
             <a href="index.html" class="encabezado-logo">
                 <img src="images/svg/logo-header.svg" alt="Capitán del Espacio">
             </a>
-            <nav class="navegacion">
-                <ul class="navegacion-lista">
-                    <li><a href="productos.html" class="navegacion-enlace navegacion-enlace-productos">Productos</a></li>
-                    <li><a href="historia.html" class="navegacion-enlace navegacion-enlace-historia">Historia</a></li>
-                    <li><a href="distribucion.html" class="navegacion-enlace navegacion-enlace-distribucion">Distribución</a></li>
-                    <li><a href="tienda.html" class="navegacion-enlace navegacion-enlace-tienda">Tienda</a></li>
-                </ul>
-            </nav>
-            <div class="buscador">
-                <input type="search" class="buscador-campo" placeholder="Buscar...">
-                <button class="buscador-boton" aria-label="Buscar"></button>
+
+        
+            <div class="panel">
+                <nav class="navegacion">
+                    <ul class="navegacion-lista">
+                        <li><a href="productos.html" class="navegacion-enlace navegacion-enlace-productos">Productos</a></li>
+                        <li><a href="historia.html" class="navegacion-enlace navegacion-enlace-historia">Historia</a></li>
+                        <li><a href="distribucion.html" class="navegacion-enlace navegacion-enlace-distribucion">Distribución</a></li>
+                        <li><a href="tienda.html" class="navegacion-enlace navegacion-enlace-tienda">Tienda</a></li>
+                    </ul>
+                </nav>
+                <div class="buscador">
+                    <input type="search" class="buscador-campo" placeholder="Buscar...">
+                    <button class="buscador-boton" aria-label="Buscar"></button>
+                </div>
             </div>
+
             <div class="acciones">
-                <button class="acciones-boton acciones-boton-registro" aria-label="Registrarse"></button>
+                <a href="registro.html" class="acciones-boton acciones-boton-registro" aria-label="Registrarse"></a>
                 <button class="acciones-boton acciones-boton-carrito" aria-label="Carrito"></button>
             </div>
         </div>
@@ -70,8 +79,8 @@
         </div>
     </section>
 
-       <!-- SECCIÓN CUESTIONARIO -->
-    <section class="cuestionario">
+<!-- SECCIÓN CUESTIONARIO -->
+    <section class="cuestionario" id="cuestionario">
         <div class="tira-titulo">
             <div class="marquee">
                 <div class="fila">
@@ -88,38 +97,145 @@
             <div class="introduccion">
                 <h4>Descubrí cuál de nuestros clásicos representa mejor tu personalidad y tu forma de vivir los momentos dulces.</h4>
                 <p>Seleccioná una sola respuesta de cada pregunta y dale click al botón para conocer el resultado.</p>
-                <a href="#" class="btn-resultado">Resultados</a>
+                
+                <input type="radio" name="pregunta1" value="1" id="p1-opcion1" class="control-modal" checked>
+                <input type="radio" name="pregunta1" value="2" id="p1-opcion2" class="control-modal">
+                <input type="radio" name="pregunta1" value="3" id="p1-opcion3" class="control-modal">
+
+                <input type="checkbox" id="ver-resultado" class="control-modal">
+                <label for="ver-resultado" class="btn-resultado">Resultado</label>
+
+                <!-- triple negro -->
+                <div class="modal-overlay modal-triple-negro">
+                    <div class="modal-card">
+                        <label for="ver-resultado" class="modal-cerrar" aria-label="Cerrar">&times;</label>
+                        <h3 class="modal-titulo">Sos un Capitán del Espacio Triple Negro</h3>
+                        <p class="modal-texto">Sos alguien con las convicciones bien firmes y leal, con una forma de vivir donde no existen los grises.</p>
+                    </div>
+                </div>
+
+                <!-- membrillo -->
+                <div class="modal-overlay modal-membrillo">
+                    <div class="modal-card">
+                        <label for="ver-resultado" class="modal-cerrar" aria-label="Cerrar">&times;</label>
+                        <h3 class="modal-titulo">Sos un Capitán del Espacio de Membrillo Simple</h3>
+                        <p class="modal-texto">Equilibrado, detallista y con una sensibilidad para disfrutar los pequeños momentos.</p>
+                    </div>
+                </div>
+
+                <!-- blanco -->
+                <div class="modal-overlay modal-doble-blanco">
+                    <div class="modal-card">
+                        <label for="ver-resultado" class="modal-cerrar" aria-label="Cerrar">&times;</label>
+                        <h3 class="modal-titulo">Sos un Capitán del Espacio Doble Blanco</h3>
+                        <p class="modal-texto">Sos práctico y decidido, sabés lo que querés, pero tenés la habilidad de adaptarte a las diferentes situaciones.</p>
+                    </div>
+                </div>
             </div>
 
             <div class="cuestionario-card">
+                <input type="radio" name="paso-quiz" id="paso-1" class="control-paso" checked>
+                <input type="radio" name="paso-quiz" id="paso-2" class="control-paso">
+                <input type="radio" name="paso-quiz" id="paso-3" class="control-paso">
+
                 <form class="quiz-form">
-                    <p class="pregunta-texto">¿Cómo reaccionás si alguien te pide que le convides de tu alfajor Capitán del Espacio?</p>
-                    <ul class="quiz-opciones">
-                        <li>
-                            <label class="opcion-label">
-                                <input type="radio" name="pregunta1" value="1" class="radio-oculto">
-                                <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
-                                <span>Le digo que el Capitán no se comparte, es ley universal.</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="opcion-label">
-                                <input type="radio" name="pregunta1" value="2" class="radio-oculto">
-                                <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
-                                <span>Parto la mitad con dolor en el alma pero con bondad.</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="opcion-label">
-                                <input type="radio" name="pregunta1" value="3" class="radio-oculto">
-                                <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
-                                <span>Le compro otro para evitar conflictos.</span>
-                            </label>
-                        </li>
-                    </ul>
-                    <div class="quiz-footer">
-                        <span class="quiz-paginacion">1/3</span>
-                        <a href="#" class="enlace-flecha">&gt;</a>
+                    <!-- PREGUNTA 1 -->
+                    <div class="quiz-paso seccion-paso-1">
+                        <p class="pregunta-texto">¿Cómo reaccionás si alguien te pide que le convides de tu alfajor Capitán del Espacio?</p>
+                        <ul class="quiz-opciones">
+                            <li>
+                                <label class="opcion-label">
+                                    <input type="radio" name="pregunta1" value="1" class="radio-oculto" onclick="document.getElementById('p1-opcion1').checked = true;">
+                                    <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
+                                    <span>Le digo que el Capitán no se comparte, es ley universal.</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="opcion-label">
+                                    <input type="radio" name="pregunta1" value="2" class="radio-oculto" onclick="document.getElementById('p1-opcion2').checked = true;">
+                                    <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
+                                    <span>Parto la mitad con dolor en el alma pero con bondad.</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="opcion-label">
+                                    <input type="radio" name="pregunta1" value="3" class="radio-oculto" onclick="document.getElementById('p1-opcion3').checked = true;">
+                                    <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
+                                    <span>Le compro otro para evitar conflictos.</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="quiz-footer">
+                            <span class="espacio-vacio"></span>
+                            <span class="quiz-paginacion">1/3</span>
+                            <label for="paso-2" class="enlace-flecha" aria-label="Siguiente">&gt;</label>
+                        </div>
+                    </div>
+
+                    <!-- PREGUNTA 2 -->
+                    <div class="quiz-paso seccion-paso-2">
+                        <p class="pregunta-texto">¿Cuál es tu momento ideal para un alfajor?</p>
+                        <ul class="quiz-opciones">
+                            <li>
+                                <label class="opcion-label">
+                                    <input type="radio" name="pregunta2" value="1" class="radio-oculto">
+                                    <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
+                                    <span>Después de la cena como un postre.</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="opcion-label">
+                                    <input type="radio" name="pregunta2" value="2" class="radio-oculto">
+                                    <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
+                                    <span>En la merienda con un mate.</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="opcion-label">
+                                    <input type="radio" name="pregunta2" value="3" class="radio-oculto">
+                                    <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
+                                    <span>A cualquier hora, no hay excusas.</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="quiz-footer">
+                            <label for="paso-1" class="enlace-flecha" aria-label="Anterior">&lt;</label>
+                            <span class="quiz-paginacion">2/3</span>
+                            <label for="paso-3" class="enlace-flecha" aria-label="Siguiente">&gt;</label>
+                        </div>
+                    </div>
+
+                    <!-- PREGUNTA 3 -->
+                    <div class="quiz-paso seccion-paso-3">
+                        <p class="pregunta-texto">¿Cómo es tu ritual al momento de elegir qué alfajor vas a comprar?</p>
+                        <ul class="quiz-opciones">
+                            <li>
+                                <label class="opcion-label">
+                                    <input type="radio" name="pregunta3" value="1" class="radio-oculto">
+                                    <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
+                                    <span>Voy sin dudarlo, ya sé qué alfajor quiero.</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="opcion-label">
+                                    <input type="radio" name="pregunta3" value="2" class="radio-oculto">
+                                    <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
+                                    <span>Evalúo en el momento y elijo cuál va a acompañar mejor.</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="opcion-label">
+                                    <input type="radio" name="pregunta3" value="3" class="radio-oculto">
+                                    <img src="images/svg/estrella.svg" alt="" class="estrella-svg-personalizada" aria-hidden="true">
+                                    <span>Llevo todos los gustos porque elegir un solo sabor es traición.</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="quiz-footer">
+                            <label for="paso-2" class="enlace-flecha" aria-label="Anterior">&lt;</label>
+                            <span class="quiz-paginacion">3/3</span>
+                            <span class="espacio-vacio"></span>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -131,7 +247,7 @@
             <h2>LA ÚNICA PUBLICIDAD QUE NOS IMPORTA</h2>
             <div class="comentarios">
                 <article class="comentario-item">
-                    <img src="images/juan.png" alt="Juan M." class="comentario-avatar">
+                    <img src="images/index/señor2.png" alt="Juan M." class="comentario-avatar">
                     <div class="comentario-burbuja">
                         <p>“Sabor inigualable desde que tengo uso de razón”</p>
                         <span class="comentario-autor">Juan M.</span>
@@ -139,7 +255,7 @@
                 </article>
 
                 <article class="comentario-item">
-                    <img src="images/agustina.png" alt="Agustina A." class="comentario-avatar">
+                    <img src="images/index/mujer1.png" alt="Agustina A." class="comentario-avatar">
                     <div class="comentario-burbuja">
                         <p>“Arte puro hecho alfajor”</p>
                         <span class="comentario-autor">Agustina A.</span>
@@ -147,7 +263,7 @@
                 </article>
 
                 <article class="comentario-item">
-                    <img src="images/sofia.png" alt="Sofía G." class="comentario-avatar">
+                    <img src="images/index/mujer2.png" alt="Sofía G." class="comentario-avatar">
                     <div class="comentario-burbuja">
                         <p>“El verdadero orgullo de Quilmes. No hay con qué darle”</p>
                         <span class="comentario-autor">Sofía G.</span>
@@ -155,7 +271,7 @@
                 </article>
 
                 <article class="comentario-item">
-                    <img src="images/pedro.png" alt="Pedro S." class="comentario-avatar">
+                    <img src="images/index/señor1.png" alt="Pedro S." class="comentario-avatar">
                     <div class="comentario-burbuja">
                         <p>“Hermoso viaje a la infancia”</p>
                         <span class="comentario-autor">Pedro S.</span>

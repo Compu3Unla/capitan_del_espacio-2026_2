@@ -1655,7 +1655,6 @@ body:has(.inicio-sesion[open]) {
 
 
 /* -----INDEX----- */
-
 .btn-resultado {
   display: inline-flex;
   align-items: center;
@@ -1680,8 +1679,17 @@ body:has(.inicio-sesion[open]) {
   background-color: #A02820;
 }
 
-.hero-imagen-contenedor {
+.hero-historia {
+  padding: 10px 0 40px 0;
+  margin-top: 55px;
+  background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 10%, #F2EBD9 45%);
+  text-align: center;
+  color: #0F214A;
   width: 100%;
+}
+
+.hero-imagen-contenedor {
+  width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
@@ -1702,11 +1710,9 @@ body:has(.inicio-sesion[open]) {
 
 .hero-texto-libre {
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 0 auto;
   padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .hero-texto-libre h1 {
@@ -1715,8 +1721,7 @@ body:has(.inicio-sesion[open]) {
   font-size: 32px;
   color: #0F214A;
   margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
+  line-height: 1.2;
 }
 
 .hero-texto-libre h2 {
@@ -1724,6 +1729,7 @@ body:has(.inicio-sesion[open]) {
   font-weight: 400;
   font-size: 20px;
   color: #0F214A;
+  line-height: 1.3;
 }
 
 .h2-decorativo {
@@ -1740,7 +1746,7 @@ body:has(.inicio-sesion[open]) {
 }
 
 .nuestros-clasicos {
-  padding: 20px 20px 80px 20px;
+  padding: 10px 20px 80px 20px;
   background: linear-gradient(to bottom, #F2EBD9 30%, #FFFFFF 100%);
   text-align: center;
   width: 100%;
@@ -1796,6 +1802,7 @@ body:has(.inicio-sesion[open]) {
   color: #0F214A;
   padding-bottom: 80px;
   width: 100%;
+  position: relative;
 }
 
 .tira-titulo {
@@ -1840,6 +1847,11 @@ body:has(.inicio-sesion[open]) {
   margin: 0 auto;
 }
 
+.introduccion {
+  text-align: left;
+  position: relative;
+}
+
 .introduccion h4 {
   font-family: "Inter", sans-serif;
   font-weight: 400;
@@ -1847,6 +1859,7 @@ body:has(.inicio-sesion[open]) {
   color: #0F214A;
   margin-bottom: 15px;
   line-height: 1.4;
+  text-align: left;
 }
 
 .introduccion p {
@@ -1856,11 +1869,20 @@ body:has(.inicio-sesion[open]) {
   font-size: 14px;
   margin-bottom: 25px;
   line-height: 1.5;
+  text-align: left;
+}
+
+.contenedor-btn-resultado {
+  width: 100%;
+  text-align: left; 
+  margin-top: 15px;
 }
 
 .introduccion .btn-resultado {
+  display: inline-block;
   font-family: "Inter", sans-serif;
   font-weight: 600;
+  margin-left: 55px;
 }
 
 .cuestionario-card {
@@ -1869,6 +1891,15 @@ body:has(.inicio-sesion[open]) {
   padding: 30px 22px;
   border-radius: 25px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  height: 380px;
+  box-sizing: border-box;
+}
+
+.quiz-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
 }
 
 .pregunta-texto {
@@ -1878,6 +1909,24 @@ body:has(.inicio-sesion[open]) {
   color: #0F214A;
   margin-bottom: 20px;
   line-height: 1.4;
+  text-align: center;
+}
+
+.control-paso {
+  display: none;
+}
+
+.quiz-paso {
+  display: none;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#paso-1:checked ~ .quiz-form .seccion-paso-1,
+#paso-2:checked ~ .quiz-form .seccion-paso-2,
+#paso-3:checked ~ .quiz-form .seccion-paso-3 {
+  display: flex;
 }
 
 .quiz-opciones {
@@ -1936,6 +1985,11 @@ body:has(.inicio-sesion[open]) {
   text-align: center;
 }
 
+.espacio-vacio {
+  width: 28px;
+  height: 28px;
+}
+
 .enlace-flecha {
   color: #C83228;
   font-weight: bold;
@@ -1948,16 +2002,95 @@ body:has(.inicio-sesion[open]) {
   height: 28px;
   border-radius: 50%;
   transition: background 0.2s ease;
+  cursor: pointer;
 }
 
 .enlace-flecha:hover {
   background: rgba(200, 50, 40, 0.1);
 }
 
-/* section de reseñas-index */
+.control-modal {
+  display: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-card {
+  background: #FFFDF9;
+  color: #0F214A;
+  width: 90%;
+  max-width: 620px;
+  min-height: 380px;
+  padding: 60px 50px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.modal-titulo {
+  font-family: "Righteous", sans-serif;
+  font-size: 24px;
+  color: #0F214A;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.modal-texto {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #0F214A;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-family: "Inter", sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  color: #C83228;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.modal-cerrar:hover {
+  transform: scale(1.1);
+}
+
+#p1-opcion1:checked ~ #ver-resultado:checked ~ .modal-triple-negro {
+  display: flex;
+}
+
+#p1-opcion2:checked ~ #ver-resultado:checked ~ .modal-membrillo {
+  display: flex;
+}
+
+#p1-opcion3:checked ~ #ver-resultado:checked ~ .modal-doble-blanco {
+  display: flex;
+}
+
+/* section de reseñas */
 
 .publicidad {
-  padding: 80px 150px;
+  padding: 60px 20px 100px 20px;
   background: #FFFFFF;
   text-align: center;
 }
@@ -1966,64 +2099,85 @@ body:has(.inicio-sesion[open]) {
   font-family: "Righteous", sans-serif;
   font-weight: 400;
   color: #0F214A;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   font-size: 28px;
 }
 
 .comentarios {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  max-width: 900px;
+  position: relative;
+  max-width: 950px;
+  height: 480px;
   margin: 0 auto;
 }
 
 .comentario-item {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  margin-top: 40px;
+  width: 280px;
+}
+
+.comentario-item:nth-child(1) {
+  top: 0px;
+  left: 31%;
+}
+
+.comentario-item:nth-child(2) {
+  top: 180px;
+  left: 0px;
+}
+
+.comentario-item:nth-child(3) {
+  top: 240px;
+  left: 36%;
+}
+
+.comentario-item:nth-child(4) {
+  top: 110px;
+  right: 2%;
 }
 
 .comentario-avatar {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  position: absolute;
-  top: -40px;
   border: 4px solid #FFFFFF;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  margin-bottom: -35px;
   z-index: 2;
+  background-color: #F2EBD9;
 }
 
 .comentario-burbuja {
   background: #C83228;
   color: #FFFFFF;
-  padding: 55px 25px 25px 25px;
-  border-radius: 30px;
+  padding: 45px 20px 20px 20px;
+  border-radius: 35px;
   width: 100%;
-  box-shadow: 0 8px 20px rgba(200, 50, 40, 0.25);
+  box-sizing: border-box;
+  box-shadow: 0 8px 25px rgba(200, 50, 40, 0.22);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  text-align: center;
 }
 
 .comentario-burbuja p {
   font-family: "Inter", sans-serif;
   font-style: italic;
   margin: 0;
-  font-size: 15px;
+  font-size: 14.5px;
+  line-height: 1.4;
 }
 
 .comentario-autor {
   font-family: "Righteous", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 0.05em;
-  margin-top: 5px;
+  margin-top: 4px;
 }
-
 
 
 
@@ -3203,6 +3357,44 @@ body:has(.carrito.abierto) {
     position: absolute;
     top: 39%;
     left: 50%;
+  }
+
+
+  /* index-mobile */
+  .cuestionario-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 20px 0;
+  }
+
+  .cuestionario-card {
+    width: 100%;
+    height: auto;
+    min-height: 380px;
+  }
+
+  .contenedor-btn-resultado {
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .introduccion .btn-resultado {
+    margin-left: 0;
+  }
+
+  .comentarios {
+    position: static;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .comentario-item {
+    position: static;
+    width: 100%;
   }
 }
 

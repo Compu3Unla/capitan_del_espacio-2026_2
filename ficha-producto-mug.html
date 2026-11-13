@@ -223,9 +223,8 @@
         </footer>
 
         <!-- carrito -->
-        <div class="carrito-fondo" data-carrito-cerrar></div> <!-- CORREGIR ESTO -->
 
-            <aside class="carrito" id="carrito" role="dialog" aria-modal="true" aria-labelledby="carrito-titulo" aria-hidden="true">
+            <dialog class="carrito" id="carrito" role="dialog" aria-modal="true" aria-labelledby="carrito-titulo" aria-hidden="true">
                 <button class="carrito-cerrar" type="button" aria-label="Cerrar carrito" data-carrito-cerrar></button>
 
                 <h2 class="carrito-titulo" id="carrito-titulo">Mi carrito</h2>
@@ -254,7 +253,7 @@
                     <p class="carrito-nota">Nota: El precio con descuento por pago con transferencia o depósito bancario se recalculará automáticamente al elegir el modo de pago.</p>
                     <a class="carrito-boton" href="#">Iniciar compra</a>
                 </section>
-            </aside>
+            </dialog>
 
 
 
@@ -399,7 +398,6 @@
     <script>
       (function () {
         const carrito = document.getElementById('carrito');
-        const fondoCarrito = document.querySelector('.carrito-fondo');
         const botonAbrirCarrito = document.querySelector('.acciones-boton-carrito');
         const botonCerrarCarrito = carrito.querySelector('.carrito-cerrar');
         const botonMenosCarrito = document.getElementById('carrito-menos');
@@ -420,31 +418,22 @@
           botonMenosCarrito.disabled = unidadesCarrito === 0;
         }
 
-        function abrirCarrito() {
-          carrito.classList.add('abierto');
-          fondoCarrito.classList.add('abierto');
-          carrito.setAttribute('aria-hidden', 'false');
-          botonCerrarCarrito.focus();
-        }
-
-        function cerrarCarrito() {
-          carrito.classList.remove('abierto');
-          fondoCarrito.classList.remove('abierto');
-          carrito.setAttribute('aria-hidden', 'true');
-          botonAbrirCarrito.focus();
-        }
-
         botonAbrirCarrito.addEventListener('click', function (evento) {
           evento.preventDefault();
-          abrirCarrito();
+          carrito.showModal();
         });
 
-        botonCerrarCarrito.addEventListener('click', cerrarCarrito);
-        fondoCarrito.addEventListener('click', cerrarCarrito);
+        botonCerrarCarrito.addEventListener('click', function () {
+          carrito.close();
+        });
 
-        document.addEventListener('keydown', function (evento) {
-          if (evento.key === 'Escape' && carrito.classList.contains('abierto')) {
-            cerrarCarrito();
+        // cerrar al hacer clic en el fondo oscuro (fuera del panel)
+        carrito.addEventListener('click', function (evento) {
+          const caja = carrito.getBoundingClientRect();
+          const afuera = evento.clientX < caja.left || evento.clientX > caja.right ||
+                         evento.clientY < caja.top || evento.clientY > caja.bottom;
+          if (afuera) {
+            carrito.close();
           }
         });
 

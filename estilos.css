@@ -1430,7 +1430,7 @@ body:has(.inicio-sesion[open]) {
 .hero-distribucion {
   display: grid;
   width: 100%;
-  margin-top: 120px;
+  margin-top: 90px;
 }
 
 .hero-distribucion-imagen {
@@ -1535,13 +1535,30 @@ body:has(.inicio-sesion[open]) {
   overflow: hidden;
 }
 
+.atencion-al-cliente h2:hover {
+  color: #C83228;
+  cursor: pointer
+}
+
+.inicio-productos {
+    text-align: start;
+    margin-left: 60px;
+    margin-top: 60px;
+}
+
+p.inicio-distribucion {
+  text-align: start;
+  margin-left: 60px;
+  margin-top: 60px
+}
+
 
 /*---productos-----*/
 
 .hero-productos {
   display: grid;
   width: 100%;
-  margin-top: 120px;
+  margin-top: 90px;
 }
 
 .hero-productos-imagen {
@@ -1649,6 +1666,32 @@ body:has(.inicio-sesion[open]) {
 .sabores-productos img,
 .alfajor-del-año img {
   margin-top: 10px;
+}
+
+.sabores-productos h2:hover {
+  color: #C83228;
+  cursor: pointer
+}
+
+.sabores-productos img:hover,
+.alfajor-del-año img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.alfajor-del-año h2:hover {
+  transform: scale(1.1);
+  cursor: pointer
+}
+
+.sabores-productos article p {
+  margin: 0;
+}
+
+p.inicio-productos {
+  text-align: start;
+  margin-left: 60px;
+  margin-top: 60px
 }
 
 
@@ -3315,33 +3358,6 @@ body:has(.carrito.abierto) {
     text-align: center;
   }
 
-  /*distribucion*/
-
-  .distribucion {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .atencion-al-cliente {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-  }
-
-  .form-distribucion {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-
-  .atencion-online {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-
-  .hero-distribucion-titulos {
-    bottom: 60px;
-  }
 
   /*-------productos--------*/
 
@@ -3351,12 +3367,19 @@ body:has(.carrito.abierto) {
     gap: 50px;
   }
 
+  .hero-productos-imagen {
+    height: 300px;
+  }
+
   .hero-productos-titulos {
     width: 100%;
     position: absolute;
-    top: 39%;
+    top: 50%;
     left: 50%;
-  }
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
 
 
   /* index-mobile */

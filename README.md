@@ -10,10 +10,6 @@
 
 Este proyecto consiste en un **rediseño integral del sitio web de Capitán del Espacio**, una marca histórica y un clásico de Zona Sur.
 
-Partimos de una premisa clara: *modernizar sin traicionar*. Por eso, el trabajo comenzó con una nueva identidad visual que respeta el diseño original de la marca, conservando su esencia y su carácter, pero optimizándola para que resulte más moderna, versátil y funcional en distintos formatos y soportes.
-
-A partir de esa identidad, intervenimos la totalidad del sitio.
-
 Lo que hicimos fue un rediseño completo de la web, donde replanteamos cada página con una estética más moderna, limpia y actual, pensando siempre en que la navegación sea clara y amigable para el usuario. También buscamos que la visita al sitio sea una *experiencia inmersiva*, con una puesta visual que transmite aventura, exploración y nostalgia.
 
 ## Entorno de trabajo

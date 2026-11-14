@@ -1738,7 +1738,7 @@ p.inicio-productos {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  margin-top: 0;
+  margin-top: 90px;
   margin-bottom: 40px;
   padding: 0;
 }
@@ -3898,7 +3898,7 @@ body:has(.carrito[open]) {
     top: 385px;
     left: 140px;
   }
-}
+
 
 /*----- HISTORIA -----*/
 /* HERO */

@@ -3747,6 +3747,10 @@ body:has(.carrito[open]) {
     text-align: center;
   }
 
+  .hero-imagen-contenedor {
+    margin-top: 0;
+  }
+
   .clasicos-contenido-tarjeta h2 {
     font-size: 20px;
     text-align: center;
